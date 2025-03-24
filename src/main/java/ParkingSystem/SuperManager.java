@@ -1,5 +1,5 @@
 package ParkingSystem;
 
-public class SuperManager {
+public class SuperManager extends Manager {
 
 }

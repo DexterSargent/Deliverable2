@@ -1,5 +1,5 @@
 package ParkingSystem;
 
-public class MobilePay {
+public class MobilePay extends Strategy {
 
 }

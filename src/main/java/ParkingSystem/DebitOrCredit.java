@@ -1,5 +1,5 @@
 package ParkingSystem;
 
-public class DebitOrCredit {
+public class DebitOrCredit extends Strategy {
 
 }
