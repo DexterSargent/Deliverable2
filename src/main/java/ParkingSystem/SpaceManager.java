@@ -28,8 +28,7 @@ public class SpaceManager {
             if (space == null) {
                 space = new ParkingSpace(spaceNum);
                 lot.addParkingSpace(spaceNum, space);
-            }
-            
+            }   
             space.setState(enabled ? new EnabledState() : new DisabledState());
         }
     }

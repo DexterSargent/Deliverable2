@@ -59,8 +59,8 @@ public class ParkingSpaceProxy {
         return registry.login(username, password);
     }
 
-    public boolean register(String name, String username, String password, String clientType, String licensePlate) {
-        return registry.registerClient(name, username, password, clientType, licensePlate);
+    public boolean register(Client client) {
+        return registry.registerClient(client);
     }
 
     public void addParkingLot(String lotId) {

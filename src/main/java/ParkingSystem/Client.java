@@ -49,12 +49,9 @@ public class Client {
 		return parkingProxy.editBooking(clientId, newStartTime, newDuration);
 	}
 	
-	public Booking getBookingDetails() {
-		
-		//placeholder
-		Booking booking = new Booking();
-		return booking;
-	}
+    public Booking getBookingDetails() {
+        return parkingProxy.getBookingDetails(clientId);
+    }
 	
 	public void assignProxy(ParkingSpaceProxy parkingProxy) {
 		this.parkingProxy = parkingProxy;
@@ -79,7 +76,15 @@ public class Client {
     	return name; 
     }
     
-    public String getClientType() {
+    protected String getUsername() {
+		return username;
+	}
+
+	protected String getPassword() {
+		return password;
+	}
+
+	public String getClientType() {
     	return clientType; 
     }
     

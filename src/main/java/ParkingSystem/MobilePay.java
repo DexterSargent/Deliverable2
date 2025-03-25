@@ -1,5 +1,8 @@
 package ParkingSystem;
 
-public class MobilePay extends Strategy {
-
+public class MobilePay implements Strategy {
+    @Override
+    public boolean processPayment(String clientId, double amount, String paymentType, String cardNumber) {
+        return true; 
+    }
 }

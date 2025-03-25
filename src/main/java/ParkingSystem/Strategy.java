@@ -1,5 +1,5 @@
 package ParkingSystem;
 
-public class Strategy {
-
+public interface Strategy {
+    boolean processPayment(String clientId, double amount, String paymentType, String cardNumber);
 }
