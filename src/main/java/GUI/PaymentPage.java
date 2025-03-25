@@ -3,6 +3,7 @@ package GUI;
 import javax.swing.*;
 
 import ParkingSystem.Booking;
+import ParkingSystem.PaymentManager;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,6 +19,7 @@ public class PaymentPage extends JFrame {
     private JTextField cardNumberField;
     private JButton confirmButton;
     private Booking booking;
+    private PaymentManager paymentManager;
 
     public PaymentPage(Booking booking) {
         this.booking = booking;
@@ -76,7 +78,7 @@ public class PaymentPage extends JFrame {
             String paymentType = (String) paymentTypeCombo.getSelectedItem();
             String cardNumber = cardNumberField.getText().trim();
 
-            boolean paymentSuccess = processPayment(
+            boolean paymentSuccess = paymentManager.processPayment(
                 booking.getClientId(),
                 booking.getTotalCost(),
                 paymentType,
