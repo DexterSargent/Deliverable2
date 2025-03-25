@@ -14,6 +14,10 @@ public class ParkingSpaceFacade {
         return checkInManager.checkIn(clientId);
     }
 
+    public boolean checkOut(String clientId) {
+    	return checkInManager.checkOut(clientId);
+    }
+    
     public boolean cancelBooking(String clientId) {
         bookingManager.cancelBooking(clientId);
         return true;

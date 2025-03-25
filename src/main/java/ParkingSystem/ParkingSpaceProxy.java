@@ -12,6 +12,10 @@ public class ParkingSpaceProxy {
 	public boolean checkIn(String clientId) {
         return facade.checkIn(clientId);
     }
+	
+	public boolean checkOut(String clientId) {
+		return facade.checkOut(clientId);
+	}
 
     public boolean cancelBooking(String clientId) {
         return facade.cancelBooking(clientId);

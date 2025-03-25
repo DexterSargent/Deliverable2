@@ -24,6 +24,10 @@ public class Client {
 		return parkingProxy.checkIn(clientId);
 	}
 	
+	public boolean checkOut() {
+		return parkingProxy.checkOut(clientId);
+	}
+	
 	public boolean cancelBooking() {
 		return parkingProxy.cancelBooking(clientId);
 	}
