@@ -32,17 +32,11 @@ public class BookingManager {
 
         double totalCost = calculateCost(clientType, duration);
         
-        paymentManager.setStrategy(getPaymentStrategy(paymentType));
         if (!paymentManager.processPayment(clientId, totalCost, paymentType, cardNumber)) {
             return false;
         }
 
         Booking booking = new Booking(clientId, lotId, spaceId, startTime, duration, licensePlate, totalCost);
-        
-        if (!spaceManager.assignBooking(lotId, spaceId, booking)) {
-            paymentManager.refundDeposit(clientId, totalCost, paymentType, cardNumber);
-            return false;
-        }
 
         activeBookings.put(clientId, booking);
         return true;
@@ -75,17 +69,8 @@ public class BookingManager {
 
         Client client = accountRegistry.getClientType(clientId);
         if (client == null) return false;
-        
-        double hourlyRate = getHourlyRate(client.getClientType());
-        double refundAmount = booking.getTotalCost();
-        
-        if (!LocalTime.now().isBefore(booking.getCheckedInDeadline())) {
-            refundAmount -= hourlyRate;
-        }
 
-        paymentManager.refundWithoutDeposit(clientId, booking.getTotalCost(), 
-                                         hourlyRate, "original", booking.getLicensePlate());
-        
+        paymentManager.refundTotalCost(booking.getTotalCost());
         spaceManager.removeBooking(booking.getLotId(), booking.getSpaceId());
         activeBookings.remove(clientId);
         return true;
