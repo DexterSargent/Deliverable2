@@ -73,8 +73,7 @@ public class BookingManager {
             refundAmount -= hourlyRate;
         }
 
-        paymentManager.refundWithoutDeposit(clientId, booking.getTotalCost(), 
-                                         hourlyRate, "original", booking.getLicensePlate());
+        paymentManager.refundWithoutDeposit(clientId, booking.getTotalCost(), hourlyRate, "original", booking.getLicensePlate());
         
         spaceManager.removeBooking(booking.getLotId(), booking.getSpaceId());
         activeBookings.remove(clientId);
