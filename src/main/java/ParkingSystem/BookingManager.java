@@ -9,37 +9,28 @@ public class BookingManager {
     private final PaymentManager paymentManager = new PaymentManager();
     private final SpaceManager spaceManager = new SpaceManager();
     private final Map<String, Booking> activeBookings = new HashMap<>();
-    private final AccountRegistry accountRegistry; // Added to access client info
+    private final AccountRegistry accountRegistry = new AccountRegistry(); 
 
-    public BookingManager(AccountRegistry accountRegistry) {
-        this.accountRegistry = accountRegistry;
-    }
+    public BookingManager() {}
     
-    public boolean confirmBooking(String clientId, String clientType, String licensePlate,
-                               String lotId, int spaceId, String startTime, int duration,
-                               String paymentType, String cardNumber) {
-        // 1. Validate space availability
+    public boolean confirmBooking(String clientId, String clientType, String licensePlate, String lotId, int spaceId, String startTime, int duration, String paymentType, String cardNumber) {
         if (!spaceManager.isSpaceAvailable(lotId, spaceId)) {
             return false;
         }
 
-        // 2. Calculate costs
         double hourlyRate = getHourlyRate(clientType);
-        double deposit = hourlyRate; // 1-hour deposit
+        double deposit = hourlyRate;
         double totalCost = (hourlyRate * duration) + deposit;
         
-        // 3. Process payment
         paymentManager.setStrategy(getPaymentStrategy(paymentType));
         if (!paymentManager.processPayment(clientId, totalCost, paymentType, cardNumber)) {
             return false;
         }
 
-        // 4. Create and assign booking
-        Booking booking = new Booking(clientId, lotId, spaceId, startTime, 
-                                    duration, licensePlate, totalCost);
+        Booking booking = new Booking(clientId, lotId, spaceId, startTime, duration, licensePlate, totalCost);
         
         if (!spaceManager.assignBooking(lotId, spaceId, booking)) {
-            paymentManager.refundPayment(clientId, totalCost, paymentType, cardNumber);
+            paymentManager.refundDeposit(clientId, totalCost, paymentType, cardNumber);
             return false;
         }
 
@@ -53,8 +44,7 @@ public class BookingManager {
             return false;
         }
 
-        // Get client type from registry
-        Client client = accountRegistry.getClient(clientId);
+        Client client = accountRegistry.getClientType(clientId);
         if (client == null) return false;
         
         double additionalCost = getHourlyRate(client.getClientType()) * extraHours;
@@ -80,7 +70,7 @@ public class BookingManager {
         double refundAmount = booking.getTotalCost();
         
         if (!LocalTime.now().isBefore(booking.getCheckedInDeadline())) {
-            refundAmount -= hourlyRate; // Deduct deposit
+            refundAmount -= hourlyRate;
         }
 
         paymentManager.refundWithoutDeposit(clientId, booking.getTotalCost(), 
@@ -102,7 +92,7 @@ public class BookingManager {
             case "student": return 5.0;
             case "faculty": return 8.0;
             case "staff": return 10.0;
-            default: return 15.0; // Visitors
+            default: return 15.0;
         }
     }
     

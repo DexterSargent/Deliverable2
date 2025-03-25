@@ -15,7 +15,7 @@ public class ParkingSpaceFacade {
     }
 
     public boolean cancelBooking(String clientId) {
-        bookingManager.removeBooking(clientId);
+        bookingManager.cancelBooking(clientId);
         return true;
     }
 
