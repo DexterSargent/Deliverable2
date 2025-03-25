@@ -1,7 +1,5 @@
 package ParkingSystem;
 
-import java.util.List;
-
 public class ParkingSpaceProxy {
 
 	private ParkingSpaceFacade facade = new ParkingSpaceFacade();

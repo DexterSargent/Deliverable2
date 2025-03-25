@@ -1,3 +1,5 @@
+package ParkingSystem;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,6 +31,7 @@ public class AccountRegistry {
         superManager = SuperManager.createFromCSV(
             csvManager.loadSuperManager()[0],
             csvManager.loadSuperManager()[1],
+            csvManager.loadSuperManager()[2],
             this
         );
     }
@@ -81,11 +84,15 @@ public class AccountRegistry {
 
     public boolean login(String username, String password) {
         return clients.values().stream().anyMatch(c -> c.getUsername().equals(username) && c.getPassword().equals(password)) ||
-               managers.values().stream().anyMatch(m -> m.getUsername().equals(username) && m.getPassword().equals(password)) ||
-               (superManager != null && superManager.getUsername().equals(username) && superManager.getPassword().equals(password));
+               managers.values().stream().anyMatch(m -> m.getName().equals(username) && m.getPassword().equals(password)) ||
+               (superManager != null && superManager.getName().equals(username) && superManager.getPassword().equals(password));
     }
 
     private boolean requiresValidation(String clientType) {
         return clientType.equals("student") || clientType.equals("faculty") || clientType.equals("staff");
+    }
+    
+    public Client getClient(String clientId) {
+        return clients.get(clientId);
     }
 }

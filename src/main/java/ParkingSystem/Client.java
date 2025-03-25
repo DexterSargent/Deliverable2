@@ -15,19 +15,6 @@ public class Client {
 	private boolean isValidated;
 	private ParkingSpaceProxy parkingProxy;
 	
-	public Client(String clientId, String name, String username, String password, String clientType,
-			String licensePlate, String extraId, boolean isValidated, ParkingSpaceProxy parkingProxy) {
-		this.clientId = clientId;
-		this.name = name;
-		this.username = username;
-		this.password = password;
-		this.clientType = clientType;
-		this.licensePlate = licensePlate;
-		this.extraId = extraId;
-		this.isValidated = isValidated;
-		this.parkingProxy = parkingProxy;
-	}
-	
 	public boolean confirmBooking(String lotId, int spaceId, String startTime, int duration,
 					String paymentType, String cardNumber) {
 		return parkingProxy.confirmBooking(clientId, clientType, licensePlate, lotId, spaceId, startTime, duration, paymentType, cardNumber);
@@ -87,6 +74,14 @@ public class Client {
 	public String getClientType() {
     	return clientType; 
     }
+	
+	public String getLicensePlate() {
+		return licensePlate;
+	}
+	
+	public String getExtraId() {
+		return extraId;
+	}
     
     public boolean getIsValidated() { 
     	return isValidated;
@@ -99,4 +94,16 @@ public class Client {
     protected void setValidated(boolean validated) { 
     	this.isValidated = validated; 
     }
+    
+    public void setClientInfo(String clientId, String name, String username, String password, String clientType, String licensePlate, String extraId, boolean isValidated) {
+			this.clientId = clientId;
+			this.name = name;
+			this.username = username;
+			this.password = password;
+			this.clientType = clientType;
+			this.licensePlate = licensePlate;
+			this.extraId = extraId;
+			this.isValidated = isValidated;
+	}
+
 }

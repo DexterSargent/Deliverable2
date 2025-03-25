@@ -55,13 +55,13 @@ public class Booking {
     	return checkedIn; 
     }
 
-    void setStartTime(String newStartTime) {
+    protected void setStartTime(String newStartTime) {
     	this.startTime = newStartTime; 
     }
-    void setDuration(int newDuration) { 
+    protected void setDuration(int newDuration) { 
     	this.duration = newDuration;
     }
-    void setCheckedIn(boolean checkedIn) { 
+    protected void setCheckedIn(boolean checkedIn) { 
     	this.checkedIn = checkedIn; 
     }
 }

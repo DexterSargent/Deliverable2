@@ -4,6 +4,7 @@ public class Manager {
     private static Manager instance;
     private String managerId;
     private String name;
+    private String password;
     private ParkingSpaceProxy parkingProxy;
 
     protected Manager() {} 
@@ -15,7 +16,6 @@ public class Manager {
         return instance;
     }
 
-    // Rest of the class remains unchanged
     public void displayPendingValidations() {
         parkingProxy.displayPendingValidations();
     }
@@ -35,9 +35,14 @@ public class Manager {
     public String getName() { 
         return name; 
     }
+    
+    protected String getPassword() {
+    	return password;
+    }
 
-    void setManagerInfo(String managerId, String name) {
+    void setManagerInfo(String managerId, String name, String password) {
         this.managerId = managerId;
         this.name = name;
+        this.password = password;
     }
 }

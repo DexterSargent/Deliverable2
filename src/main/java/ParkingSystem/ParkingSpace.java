@@ -10,20 +10,20 @@ public class ParkingSpace {
         this.state = new Disabled();
     }
 
-    public void assignBooking(Booking booking) {
+    public boolean isAvailable() {
+        return currentBooking == null && state instanceof Enabled;
+    }
+
+    public boolean assignBooking(Booking booking) {
         if (state instanceof Enabled) {
             currentBooking = booking;
+            return true;
         }
+        return false;
     }
 
     public void removeBooking() {
         currentBooking = null;
-    }
-
-    public void checkIn() {
-        if (currentBooking != null) {
-            currentBooking.setCheckedIn(true);
-        }
     }
 
     public String scanSpace() {
@@ -37,8 +37,12 @@ public class ParkingSpace {
     Booking getCurrentBooking() {
         return currentBooking;
     }
+
+	public int getSpaceId() {
+		return spaceId;
+	}
+
+	public spaceState getState() {
+		return state;
+	}
 }
-
-
-
-

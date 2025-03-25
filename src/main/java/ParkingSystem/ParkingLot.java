@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ParkingLot {
-    // Attributes from diagram
     private final String lotId;
     private final Map<Integer, ParkingSpace> parkingSpaces;
     private boolean isEnabled;
@@ -22,9 +21,10 @@ public class ParkingLot {
 
     public boolean assignBooking(int spaceId, Booking booking) {
         if (!isEnabled) return false;
-        
-        ParkingSpace space = parkingSpaces.computeIfAbsent(spaceId, k -> new ParkingSpace(spaceId));
-        return space.assignBooking(booking);
+        else {
+        	ParkingSpace space = parkingSpaces.computeIfAbsent(spaceId, k -> new ParkingSpace(spaceId));
+        	return space.assignBooking(booking);
+        }
     }
 
     public void removeBooking(int spaceId) {
@@ -44,5 +44,13 @@ public class ParkingLot {
 
     public ParkingLotIterator getIterator() {
         return new ParkingLotIterator(parkingSpaces.values());
+    }
+
+    String getLotId() {
+        return lotId;
+    }
+
+    boolean isEnabled() {
+        return isEnabled;
     }
 }

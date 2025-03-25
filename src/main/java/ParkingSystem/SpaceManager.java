@@ -4,11 +4,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SpaceManager {
-    private CSVManager csvManager = new CSVManager();
-    private Map<String, ParkingLot> parkingLots = new HashMap<>();
+    private final CSVManager csvManager = new CSVManager();
+    private final Map<String, ParkingLot> parkingLots = new HashMap<>();
 
     public void loadParkingLots() {
-        parkingLots = csvManager.loadParkingLots();
+        csvManager.loadParkingLots(parkingLots);
+    }
+
+    public boolean isSpaceAvailable(String lotId, int spaceId) {
+        ParkingLot lot = parkingLots.get(lotId);
+        return lot != null && lot.isSpaceAvailable(spaceId);
+    }
+
+    public boolean assignBooking(String lotId, int spaceId, Booking booking) {
+        ParkingLot lot = parkingLots.get(lotId);
+        return lot != null && lot.assignBooking(spaceId, booking);
+    }
+
+    public void removeBooking(String lotId, int spaceId) {
+        ParkingLot lot = parkingLots.get(lotId);
+        if (lot != null) {
+            lot.removeBooking(spaceId);
+        }
     }
 
     public void toggleLot(String lotId, boolean enabled) {
@@ -24,28 +41,25 @@ public class SpaceManager {
         if (lot != null) {
             int spaceNum = Integer.parseInt(spaceId);
             ParkingSpace space = lot.getParkingSpace(spaceNum);
-            
-            if (space == null) {
-                space = new ParkingSpace(spaceNum);
-                lot.addParkingSpace(spaceNum, space);
-            }   
-            space.setState(enabled ? new EnabledState() : new DisabledState());
+            space.setState(enabled ? new Enabled() : new Disabled());
+            csvManager.saveParkingLots(parkingLots);
         }
     }
 
     public String scanSpace(String lotId, String spaceId) {
         ParkingLot lot = parkingLots.get(lotId);
         if (lot != null) {
-            ParkingSpace space = lot.getParkingSpace(Integer.parseInt(spaceId));
-            return space != null ? space.scanSpace() : "disabled";
+            return lot.getParkingSpace(Integer.parseInt(spaceId)).scanSpace();
         }
         return "disabled";
     }
 
     public void addParkingLot(String lotId) {
-        if (!parkingLots.containsKey(lotId)) {
-            parkingLots.put(lotId, new ParkingLot(lotId));
-            csvManager.saveParkingLots(parkingLots);
-        }
+        parkingLots.putIfAbsent(lotId, new ParkingLot(lotId));
+        csvManager.saveParkingLots(parkingLots);
+    }
+
+    Map<String, ParkingLot> getParkingLots() {
+        return parkingLots;
     }
 }
