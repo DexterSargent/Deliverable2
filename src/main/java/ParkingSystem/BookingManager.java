@@ -13,14 +13,24 @@ public class BookingManager {
 
     public BookingManager() {}
     
+    public double calculateCost(String clientType, int duration) {
+    	double hourlyRate = getHourlyRate(clientType);
+        double deposit = hourlyRate;
+        double totalCost = (hourlyRate * duration) + deposit;
+		return totalCost;
+    }
+    
+    public double getDeposit(String clientType) {
+    	double deposit = getHourlyRate(clientType);
+    	return deposit;
+    }
+    
     public boolean confirmBooking(String clientId, String clientType, String licensePlate, String lotId, int spaceId, String startTime, int duration, String paymentType, String cardNumber) {
         if (!spaceManager.isSpaceAvailable(lotId, spaceId)) {
             return false;
         }
 
-        double hourlyRate = getHourlyRate(clientType);
-        double deposit = hourlyRate;
-        double totalCost = (hourlyRate * duration) + deposit;
+        double totalCost = calculateCost(clientType, duration);
         
         paymentManager.setStrategy(getPaymentStrategy(paymentType));
         if (!paymentManager.processPayment(clientId, totalCost, paymentType, cardNumber)) {
@@ -73,7 +83,8 @@ public class BookingManager {
             refundAmount -= hourlyRate;
         }
 
-        paymentManager.refundWithoutDeposit(clientId, booking.getTotalCost(), hourlyRate, "original", booking.getLicensePlate());
+        paymentManager.refundWithoutDeposit(clientId, booking.getTotalCost(), 
+                                         hourlyRate, "original", booking.getLicensePlate());
         
         spaceManager.removeBooking(booking.getLotId(), booking.getSpaceId());
         activeBookings.remove(clientId);
@@ -103,5 +114,17 @@ public class BookingManager {
         return paymentType.equalsIgnoreCase("mobile") 
             ? new MobilePay() 
             : new DebitOrCredit();
+    }
+    
+    public SpaceManager getSpaceManager() {
+    	return spaceManager;
+    }
+    
+    public AccountRegistry getAccountRegistry() {
+    	return accountRegistry;
+    }
+    
+    public Map<String, Booking> getActiveBookings() {
+    	return activeBookings;
     }
 }
