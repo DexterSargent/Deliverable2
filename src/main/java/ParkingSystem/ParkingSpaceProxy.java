@@ -68,5 +68,13 @@ public class ParkingSpaceProxy {
     public void addParkingLot(String lotId) {
         facade.addParkingLot(lotId);
     }
+
+	public AccountRegistry getRegistry() {
+		return registry;
+	}
+
+	public ParkingSpaceFacade getFacade() {
+		return facade;
+	}
 }
 

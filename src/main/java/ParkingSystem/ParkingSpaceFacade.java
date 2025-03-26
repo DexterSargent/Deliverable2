@@ -60,4 +60,8 @@ public class ParkingSpaceFacade {
     public void addParkingLot(String lotId) {
         spaceManager.addParkingLot(lotId);
     }
+
+	public SpaceManager getSpaceManager() {
+		return spaceManager;
+	}
 }

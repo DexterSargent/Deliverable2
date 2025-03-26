@@ -2,6 +2,7 @@ package ParkingSystem;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
@@ -70,21 +71,31 @@ public class CSVManager {
 
     public void loadParkingLots(Map<String, ParkingLot> parkingLots) {
         List<String[]> records = readCSV(parkingLotFile);
+
         for (String[] record : records) {
+            if (record.length < 9) {
+                System.out.println("Skipping invalid parking lot record: " + Arrays.toString(record));
+                continue;
+            }
+
             String lotId = record[0];
             boolean isEnabled = Boolean.parseBoolean(record[1]);
             int spaceId = Integer.parseInt(record[2]);
-            String state = record[3];
-            
-            ParkingLot lot = parkingLots.computeIfAbsent(lotId, k -> new ParkingLot(lotId));
+            String stateStr = record[3];
+            String clientId = record[4];
+            String startTime = record[5];
+            int duration = record[6].isEmpty() ? 0 : Integer.parseInt(record[6]);
+            String licensePlate = record[7];
+            boolean checkedIn = record[8].isEmpty() ? false : Boolean.parseBoolean(record[8]);
+
+            ParkingLot lot = parkingLots.computeIfAbsent(lotId, ParkingLot::new);
             lot.setEnabled(isEnabled);
-            
             ParkingSpace space = lot.getParkingSpace(spaceId);
-            space.setState(state.equals("ENABLED") ? new Enabled() : new Disabled());
-            
-            if (!record[4].isEmpty()) {
-                Booking booking = new Booking(record[4], lotId, spaceId, record[5], Integer.parseInt(record[6]), record[7], 0.0 );
-                booking.setCheckedIn(Boolean.parseBoolean(record[8]));
+            space.setState("ENABLED".equalsIgnoreCase(stateStr) ? new Enabled() : new Disabled());
+
+            if (!clientId.isEmpty()) {
+            	double totalCost = 0.0; // or parse from CSV if you save it
+            	Booking booking = new Booking(clientId, lotId, spaceId, startTime, duration, licensePlate, totalCost);
                 space.assignBooking(booking);
             }
         }
@@ -118,22 +129,23 @@ public class CSVManager {
         overwriteCSV(parkingLotFile, records);
     }
 
-    private List<String[]> readCSV(String filePath) {
+    public List<String[]> readCSV(String filePath) {
         List<String[]> records = new ArrayList<>();
         try {
-            Files.createDirectories(Paths.get(filePath).getParent());
-            if (!Files.exists(Paths.get(filePath))) {
-                Files.createFile(Paths.get(filePath));
+            Path parent = Paths.get(filePath).getParent();
+            if (parent != null) Files.createDirectories(parent);
+
+            File file = new File(filePath);
+            if (!file.exists()) file.createNewFile();
+
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                records.add(line.split(","));
             }
-            
-            try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-                String line;
-                while ((line = br.readLine()) != null) {
-                    records.add(line.split(","));
-                }
-            }
+            reader.close();
         } catch (IOException e) {
-            System.err.println("Error reading CSV: " + e.getMessage());
+            e.printStackTrace();
         }
         return records;
     }
