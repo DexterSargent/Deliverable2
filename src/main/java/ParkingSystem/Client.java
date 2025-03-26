@@ -10,12 +10,11 @@ public class Client {
 	private String username;
 	private String password;
 	private String clientType;
-	private String licensePlate;
 	private String extraId;
 	private boolean isValidated;
 	private ParkingSpaceProxy parkingProxy;
 	
-	public boolean confirmBooking(String lotId, int spaceId, String startTime, int duration,
+	public boolean confirmBooking(String licensePlate, String lotId, int spaceId, String startTime, int duration,
 					String paymentType, String cardNumber) {
 		return parkingProxy.confirmBooking(clientId, clientType, licensePlate, lotId, spaceId, startTime, duration, paymentType, cardNumber);
 	}
@@ -79,10 +78,6 @@ public class Client {
     	return clientType; 
     }
 	
-	public String getLicensePlate() {
-		return licensePlate;
-	}
-	
 	public String getExtraId() {
 		return extraId;
 	}
@@ -99,13 +94,12 @@ public class Client {
     	this.isValidated = validated; 
     }
     
-    public void setClientInfo(String clientId, String name, String username, String password, String clientType, String licensePlate, String extraId, boolean isValidated) {
+    public void setClientInfo(String clientId, String name, String username, String password, String clientType, String extraId, boolean isValidated) {
 			this.clientId = clientId;
 			this.name = name;
 			this.username = username;
 			this.password = password;
 			this.clientType = clientType;
-			this.licensePlate = licensePlate;
 			this.extraId = extraId;
 			this.isValidated = isValidated;
 	}

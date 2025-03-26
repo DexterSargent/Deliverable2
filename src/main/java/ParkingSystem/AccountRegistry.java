@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
+import java.util.UUID;
 
 public class AccountRegistry {
     private final Map<String, Client> clients = new HashMap<>();
@@ -52,24 +54,73 @@ public class AccountRegistry {
         }
     }
 
-    public boolean registerClient(Client client) {
-        if (!clients.containsKey(client.getClientId())) {
-            if (requiresValidation(client.getClientType())) {
-                pendingValidations.put(client.getClientId(), client);
-            } else {
-                clients.put(client.getClientId(), client);
-            }
-            csvManager.saveClient(client);
-            return true;
+    public boolean registerClient(String name, String username, String password, String clientType, String extraId) {
+        String clientId;
+        do {
+            clientId = "CLT-" + UUID.randomUUID().toString();
+        } while (clients.containsKey(clientId) || pendingValidations.containsKey(clientId));
+
+        boolean usernameExists = clients.values().stream().anyMatch(c -> c.getUsername().equals(username)) ||
+                                  pendingValidations.values().stream().anyMatch(c -> c.getUsername().equals(username));
+        if (usernameExists) {
+            return false;
         }
-        return false;
+
+        Client client = Client.getInstance();
+        client.setClientInfo(
+            clientId,
+            name,
+            username,
+            password,
+            extraId,
+            clientType,
+            !requiresValidation(clientType)
+        );
+
+        if (proxy != null) {
+            client.assignProxy(proxy);
+        }
+
+        if (requiresValidation(clientType)) {
+            pendingValidations.put(clientId, client);
+        } else {
+            clients.put(clientId, client);
+        }
+
+        csvManager.saveClient(client);
+        return true;
     }
 
+
     public void autoGenerateManager() {
+        String randomName = generateRandomString(8);
+        String randomPassword = generateRandomString(10);
+
         Manager manager = Manager.getInstance();
+        manager.setManagerInfo(
+            UUID.randomUUID().toString(),
+            randomName,
+            randomPassword
+        );
+
         managers.put(manager.getManagerId(), manager);
         csvManager.saveManager(manager);
+
+        System.out.println("Generated Manager:");
+        System.out.println("Username: " + randomName);
+        System.out.println("Password: " + randomPassword);
     }
+
+    private String generateRandomString(int length) {
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        StringBuilder sb = new StringBuilder();
+        Random random = new Random();
+        for (int i = 0; i < length; i++) {
+            sb.append(chars.charAt(random.nextInt(chars.length())));
+        }
+        return sb.toString();
+    }
+
 
     public List<Client> displayPendingValidations() {
     	 return new ArrayList<>(pendingValidations.values());
@@ -93,10 +144,10 @@ public class AccountRegistry {
                     c.getUsername(),
                     c.getPassword(),
                     c.getClientType(),
-                    c.getLicensePlate(),
                     c.getExtraId(),
                     c.getIsValidated()
                 );
+                client.assignProxy(proxy);
                 return client;
             }
         }
@@ -109,12 +160,14 @@ public class AccountRegistry {
                     m.getName(),
                     m.getPassword()
                 );
+                manager.assignProxy(proxy);
                 return manager;
             }
         }
 
         if (superManager != null && superManager.getName().equals(username)
             && superManager.getPassword().equals(password)) {
+        	superManager.assignProxy(proxy);
             return superManager;  // assuming superManager is a singleton or already exists
         }
 
