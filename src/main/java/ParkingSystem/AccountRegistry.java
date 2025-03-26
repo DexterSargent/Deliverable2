@@ -1,6 +1,8 @@
 package ParkingSystem;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class AccountRegistry {
@@ -69,9 +71,8 @@ public class AccountRegistry {
         csvManager.saveManager(manager);
     }
 
-    public void displayPendingValidations() {
-        pendingValidations.values().forEach(client -> 
-            System.out.println(client.getClientId() + " - " + client.getClientType()));
+    public List<Client> displayPendingValidations() {
+    	 return new ArrayList<>(pendingValidations.values());
     }
 
     public void validateClient(String clientId) {
