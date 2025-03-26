@@ -57,7 +57,7 @@ public class ParkingSpaceProxy {
         registry.autoGenerateManager();
     }
 
-    public boolean login(String username, String password) {
+    public Object login(String username, String password) {
         return registry.login(username, password);
     }
 
