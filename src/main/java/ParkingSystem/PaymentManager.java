@@ -2,14 +2,19 @@ package ParkingSystem;
 
 public class PaymentManager {
     private Strategy strategy;
-    String refundMessage = "";
-
+    public String refundMessage = "";
+    public String paymentMessage = "";
+    
     public void setStrategy(Strategy strategy) {
         this.strategy = strategy;
     }
 
     public boolean processPayment(String clientId, double amount, String paymentType, String cardNumber) {
-        return strategy.processPayment(clientId, amount, paymentType, cardNumber);
+    	if (!processPayment(clientId, amount, paymentType, cardNumber)) {
+    		return false;
+    	}
+    	paymentMessage = strategy.getPaymentMessage();
+        return true;
     }
 
     public boolean refundDeposit(double depositAmount) {
@@ -26,5 +31,5 @@ public class PaymentManager {
     public boolean refundTotalCost(double totalAmount) {
     	refundMessage = "Refunded total cost of $" + totalAmount;
     	return true;
-    }
+    }  
 }

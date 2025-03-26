@@ -18,4 +18,8 @@ public class DebitOrCredit implements Strategy {
 		paymentMessage = "Paid $" + amount + " with Debit/Credit";
 		return true;
 	}
+	
+    public String getPaymentMessage() {
+    	return paymentMessage;
+    }
 }
