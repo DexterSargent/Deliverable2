@@ -19,7 +19,7 @@ public class CSVManager {
             Client client = Client.getInstance();
             client.setClientInfo(
                 record[0], record[1], record[2], record[3], 
-                record[4], record[5], record[6], Boolean.parseBoolean(record[7])
+                record[4], record[5], Boolean.parseBoolean(record[6])
             );
             clients.add(client);
         }
@@ -46,7 +46,7 @@ public class CSVManager {
     public void saveClient(Client client) {
         String[] data = {
             client.getClientId(), client.getName(), client.getUsername(), 
-            client.getPassword(), client.getClientType(), client.getLicensePlate(), 
+            client.getPassword(), client.getClientType(), 
             client.getExtraId(), String.valueOf(client.getIsValidated())
         };
         appendCSV(clientFile, data);
