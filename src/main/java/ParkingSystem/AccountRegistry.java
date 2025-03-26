@@ -82,11 +82,44 @@ public class AccountRegistry {
         }
     }
 
-    public boolean login(String username, String password) {
-        return clients.values().stream().anyMatch(c -> c.getUsername().equals(username) && c.getPassword().equals(password)) ||
-               managers.values().stream().anyMatch(m -> m.getName().equals(username) && m.getPassword().equals(password)) ||
-               (superManager != null && superManager.getName().equals(username) && superManager.getPassword().equals(password));
+    public Object login(String username, String password) {
+        for (Client c : clients.values()) {
+            if (c.getUsername().equals(username) && c.getPassword().equals(password)) {
+                Client client = Client.getInstance();
+                client.setClientInfo(
+                    c.getClientId(),
+                    c.getName(),
+                    c.getUsername(),
+                    c.getPassword(),
+                    c.getClientType(),
+                    c.getLicensePlate(),
+                    c.getExtraId(),
+                    c.getIsValidated()
+                );
+                return client;
+            }
+        }
+
+        for (Manager m : managers.values()) {
+            if (m.getName().equals(username) && m.getPassword().equals(password)) {
+                Manager manager = Manager.getInstance();
+                manager.setManagerInfo(
+                    m.getManagerId(),  // or however your manager data is structured
+                    m.getName(),
+                    m.getPassword()
+                );
+                return manager;
+            }
+        }
+
+        if (superManager != null && superManager.getName().equals(username)
+            && superManager.getPassword().equals(password)) {
+            return superManager;  // assuming superManager is a singleton or already exists
+        }
+
+        return null;
     }
+
 
     private boolean requiresValidation(String clientType) {
         return clientType.equals("student") || clientType.equals("faculty") || clientType.equals("staff");
