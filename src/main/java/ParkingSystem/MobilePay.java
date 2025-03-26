@@ -9,4 +9,8 @@ public class MobilePay implements Strategy {
     	paymentMessage = "Paid $ " + amount + " with Mobile Pay";
         return true; 
     }
+    
+    public String getPaymentMessage() {
+    	return paymentMessage;
+    }
 }
