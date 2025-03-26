@@ -43,6 +43,8 @@ public class Booking implements ActionListener {
 		JLabel startTime = new JLabel("Start time (24H clock)");
 		JLabel duration = new JLabel("Duration");
 		
+		manageBook.addActionListener(this);
+		
 		
 		String[] timeAvail = {null, "0","1", "2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23"};
 		String[] lotsID = {null/* filled with the id of Lots */};

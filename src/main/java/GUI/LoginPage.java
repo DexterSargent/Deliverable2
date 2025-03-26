@@ -4,7 +4,11 @@ import java.awt.Dimension;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class LoginPage implements ActionListener { 
+import ParkingSystem.Client;
+
+
+
+public class LoginPage  implements ActionListener { 
     JFrame frame = new JFrame();
     JPanel panel = new JPanel();
     JButton enter = new JButton("Enter");
@@ -39,21 +43,24 @@ public class LoginPage implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == enter) {
-            String user = username.getText();
-            String pass = password.getText();
-            
-            //save the info in client list
-            System.out.println("Login attempt: " + user + "/" + pass);
-            frame.dispose();
-            new Booking();
-            
-            
-        } else if (e.getSource() == register) {
-            new RegPage();
-            frame.dispose();
-        }
-    }
+    	
+    	 if (e.getSource() == enter) {
+             String user = username.getText();
+             String pass = password.getText();
+             
+             //save the info in client list
+             System.out.println("Login attempt: " + user + "/" + pass);
+             frame.dispose();
+             new Booking();
+             
+             
+         } else if (e.getSource() == register) {
+             new RegPage();
+             frame.dispose();
+         }
+     }
+    	
+      
 
     public static void main(String[] args) {
         new LoginPage();

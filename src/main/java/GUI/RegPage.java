@@ -18,9 +18,9 @@ public class RegPage implements ActionListener {
     JComboBox clientType;
 
     RegPage() {
-        username = new JTextField("Username");
-        password = new JTextField("Password");
-        extraID = new JTextField("ID");
+        username = new JTextField();
+        password = new JTextField();
+        extraID = new JTextField(null);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(420, 420);
@@ -64,7 +64,7 @@ public class RegPage implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
     	
-    	if(e.getSource() == confirm && clientType.getSelectedItem() != "vistor" && extraID.getText() == null)
+    	if(e.getSource() == confirm && (String)clientType.getSelectedItem() != "vistor" && extraID.getText() == null)
     	{
     		JOptionPane.showMessageDialog(null, "Please enter a valid university ID", "ERROR", JOptionPane.INFORMATION_MESSAGE);
     	}
