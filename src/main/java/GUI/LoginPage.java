@@ -18,6 +18,7 @@ public class LoginPage implements ActionListener {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(420, 420);
+        frame.setTitle("Login");
 
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
@@ -41,7 +42,13 @@ public class LoginPage implements ActionListener {
         if (e.getSource() == enter) {
             String user = username.getText();
             String pass = password.getText();
+            
+            //save the info in client list
             System.out.println("Login attempt: " + user + "/" + pass);
+            frame.dispose();
+            new Booking();
+            
+            
         } else if (e.getSource() == register) {
             new RegPage();
             frame.dispose();
