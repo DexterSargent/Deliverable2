@@ -10,12 +10,14 @@ public class PaymentManager {
     }
 
     public boolean processPayment(String clientId, double amount, String paymentType, String cardNumber) {
-    	if (!processPayment(clientId, amount, paymentType, cardNumber)) {
-    		return false;
-    	}
-    	paymentMessage = strategy.getPaymentMessage();
-        return true;
+        if (strategy == null) {
+            return false;
+        }
+        boolean result = strategy.processPayment(clientId, amount, paymentType, cardNumber);
+        paymentMessage = strategy.getPaymentMessage();
+        return result;
     }
+
 
     public boolean refundDeposit(double depositAmount) {
     	refundMessage = "Refunded deposit of $" + depositAmount;
