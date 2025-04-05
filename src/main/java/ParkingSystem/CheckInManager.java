@@ -23,7 +23,7 @@ public class CheckInManager {
     	if (booking != null && booking.isCheckedIn()) {
     		bookingManager.getSpaceManager().removeBooking(bookingManager.getBooking(clientId).getLotId(), bookingManager.getBooking(clientId).getSpaceId());
     		bookingManager.getActiveBookings().remove(clientId);
-    		Client client = bookingManager.getAccountRegistry().getClientType(clientId);
+    		Client client = bookingManager.getAccountRegistry().getClient(clientId);
     		double deposit = bookingManager.getDeposit(client.getClientType());
     		refundMessage = "You have been refunded your deposit of $" + deposit;
     		return true;
