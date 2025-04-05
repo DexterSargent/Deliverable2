@@ -179,7 +179,7 @@ public class AccountRegistry {
         return clientType.equals("student") || clientType.equals("faculty") || clientType.equals("staff");
     }
     
-    public Client getClientType(String clientId) {
+    public Client getClient(String clientId) {
         return clients.get(clientId);
     }
 }
