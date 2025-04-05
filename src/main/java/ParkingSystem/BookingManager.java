@@ -48,7 +48,7 @@ public class BookingManager {
             return false;
         }
 
-        Client client = accountRegistry.getClientType(clientId);
+        Client client = accountRegistry.getClient(clientId);
         if (client == null) return false;
         
         double additionalCost = getHourlyRate(client.getClientType()) * extraHours;
@@ -67,7 +67,7 @@ public class BookingManager {
             return false;
         }
 
-        Client client = accountRegistry.getClientType(clientId);
+        Client client = accountRegistry.getClient(clientId);
         if (client == null) return false;
 
         paymentManager.refundTotalCost(booking.getTotalCost());
