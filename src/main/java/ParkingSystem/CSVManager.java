@@ -62,7 +62,7 @@ public class CSVManager {
         List<String[]> records = readCSV(clientFile);
         for (String[] record : records) {
             if (record[0].equals(clientId)) {
-                record[7] = String.valueOf(isValidated);
+                record[6] = String.valueOf(isValidated);
                 break;
             }
         }
