@@ -186,4 +186,8 @@ public class AccountRegistry {
     public int getManagersSize() {
     	return managers.size();
     }
+    
+    public Manager getManager(String managerId) {
+    	return managers.get(managerId);
+    }
 }
