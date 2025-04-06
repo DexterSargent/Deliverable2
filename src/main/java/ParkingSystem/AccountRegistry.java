@@ -187,7 +187,7 @@ public class AccountRegistry {
     	return managers.size();
     }
     
-    public Manager getManager(String managerId) {
-    	return managers.get(managerId);
+    public Map<String, Manager> getManagers() {
+    	return managers;
     }
 }
