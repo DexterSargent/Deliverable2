@@ -182,4 +182,8 @@ public class AccountRegistry {
     public Client getClient(String clientId) {
         return clients.get(clientId);
     }
+    
+    public int getManagersSize() {
+    	return managers.size();
+    }
 }
