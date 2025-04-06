@@ -75,6 +75,21 @@ public class BookingManager {
         activeBookings.remove(clientId);
         return true;
     }
+    
+    public boolean editBooking(String clientId, String newStartTime, int newDuration) {
+    	 Booking booking = activeBookings.get(clientId);
+         if (booking == null || !isBeforeStartTime(booking.getStartTime())) {
+             return false;
+         }
+         
+         Client client = accountRegistry.getClient(clientId);
+         if (client == null) return false;
+         
+         booking.setStartTime(newStartTime);
+         booking.setDuration(newDuration);
+        
+         return true;
+    }
 
     private boolean isBeforeStartTime(String startTime) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
@@ -99,6 +114,10 @@ public class BookingManager {
         return paymentType.equalsIgnoreCase("mobile") 
             ? new MobilePay() 
             : new DebitOrCredit();
+    }
+    
+    public void setPaymentStrategy(Strategy strategy) {
+    	paymentManager.setStrategy(strategy);
     }
     
     public SpaceManager getSpaceManager() {
