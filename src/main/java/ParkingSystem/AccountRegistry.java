@@ -175,7 +175,7 @@ public class AccountRegistry {
     }
 
 
-    private boolean requiresValidation(String clientType) {
+    public boolean requiresValidation(String clientType) {
         return clientType.equals("student") || clientType.equals("faculty") || clientType.equals("staff");
     }
     
