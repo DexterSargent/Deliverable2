@@ -15,8 +15,8 @@ public class ParkingLot {
     }
 
     public boolean isSpaceAvailable(int spaceId) {
-        ParkingSpace space = parkingSpaces.get(spaceId);
-        return space != null && space.isAvailable() && isEnabled;
+    	ParkingSpace space = parkingSpaces.computeIfAbsent(spaceId, k -> new ParkingSpace(spaceId));
+    	return space.isAvailable();
     }
 
     public boolean assignBooking(int spaceId, Booking booking) {

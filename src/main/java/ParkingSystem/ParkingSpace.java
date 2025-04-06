@@ -7,7 +7,7 @@ public class ParkingSpace {
 
     public ParkingSpace(int spaceId) {
         this.spaceId = spaceId;
-        this.state = new Disabled();
+        this.state = new Enabled();
     }
 
     public boolean isAvailable() {
@@ -15,7 +15,7 @@ public class ParkingSpace {
     }
 
     public boolean assignBooking(Booking booking) {
-        if (state instanceof Enabled) {
+        if (state instanceof Enabled && currentBooking == null) {
             currentBooking = booking;
             return true;
         }
