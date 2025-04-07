@@ -11,8 +11,8 @@ public class DebitOrCredit implements Strategy {
 	}
 	
 	public boolean validateCard(String cardNumber, double amount) {
-		if (cardNumber.length() != 15) {
-			paymentMessage = "Card Number should be 16 digits";
+		if (cardNumber.length() != 16) {
+			paymentMessage = "Card number should be 16 digits";
 			return false;
 		}
 		paymentMessage = "Paid $" + amount + " with Debit/Credit";
