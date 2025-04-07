@@ -34,7 +34,7 @@ public class ParkingSpace {
         this.state = state;
     }
 
-    Booking getCurrentBooking() {
+    public Booking getCurrentBooking() {
         return currentBooking;
     }
 
