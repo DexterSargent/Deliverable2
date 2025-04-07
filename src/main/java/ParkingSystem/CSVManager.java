@@ -54,7 +54,7 @@ public class CSVManager {
     }
 
     public void saveManager(Manager manager) {
-        String[] data = {manager.getManagerId(), manager.getName()};
+        String[] data = {manager.getManagerId(), manager.getName(), manager.getPassword()};
         appendCSV(managerFile, data);
     }
 
