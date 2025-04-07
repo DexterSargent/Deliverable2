@@ -72,8 +72,8 @@ public class AccountRegistry {
             name,
             username,
             password,
-            extraId,
             clientType,
+            extraId,
             !requiresValidation(clientType)
         );
 
