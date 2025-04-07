@@ -38,7 +38,7 @@ public class ParkingLot {
         return parkingSpaces.computeIfAbsent(spaceId, k -> new ParkingSpace(spaceId));
     }
 
-    void setEnabled(boolean enabled) {
+    public void setEnabled(boolean enabled) {
         this.isEnabled = enabled;
     }
 
@@ -50,7 +50,7 @@ public class ParkingLot {
         return lotId;
     }
 
-    boolean isEnabled() {
+    public boolean isEnabled() {
         return isEnabled;
     }
 }
