@@ -66,11 +66,11 @@ public class Client {
     	return name; 
     }
     
-    protected String getUsername() {
+    public String getUsername() {
 		return username;
 	}
 
-	protected String getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
@@ -90,7 +90,7 @@ public class Client {
     	this.clientId = id; 
     }
     
-    protected void setValidated(boolean validated) { 
+    public void setValidated(boolean validated) { 
     	this.isValidated = validated; 
     }
     
