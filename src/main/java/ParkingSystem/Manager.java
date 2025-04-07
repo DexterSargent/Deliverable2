@@ -40,7 +40,7 @@ public class Manager {
     	return password;
     }
 
-    void setManagerInfo(String managerId, String name, String password) {
+    public void setManagerInfo(String managerId, String name, String password) {
         this.managerId = managerId;
         this.name = name;
         this.password = password;
