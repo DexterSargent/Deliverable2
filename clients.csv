@@ -13,3 +13,42 @@ CLT-a0bb13ad-163a-461f-976f-1c8e829acea0,Test User,testuser,password,studentId12
 CLT-2c385ea7-bd24-41f7-98fd-89554d1f7b4d,Test User,testuser,password,studentId123,student,true
 CLT-5288fa91-c598-4ee3-ad00-9dfed4eb868e,Test User,testuser,password,studentId123,student,true
 CLT-029a0fc1-aac3-4fcd-bc42-4b29e3a9cf85,Test User,testuser,password,studentId123,student,true
+CLT-967624d6-1e08-42f6-821e-db59a4f5f94c,Test User,testuser,password,studentId123,student,true
+CLT-eba9872e-c114-479a-86f1-c1b67228a428,Test User,testuser,password,studentId123,student,true
+CLT-8e851312-7443-49ad-b9ec-ff9447ae8995,Test User,testuser,password,studentId123,student,true
+CLT-e82178f5-99ef-40ca-9f81-c230f332ab23,Test User,testuser,password,studentId123,student,true
+CLT-fd174ada-6f52-42db-ad80-d107b8045a7f,Test User,testuser,password,studentId123,student,true
+CLT-88d8619a-5314-4390-b721-ed7e6beff95f,Test User,testuser,password,studentId123,student,true
+CLT-9d7de702-8297-4d98-bdc9-c9aa5ed1876b,Test User,testuser,password,studentId123,student,true
+CLT-fd349a7c-0d88-4eaf-9965-c597d9371743,Test User,testuser,password,studentId123,student,true
+CLT-dea6faa5-3461-4cb3-aefb-62546b8037d9,Test User,testuser,password,studentId123,student,true
+CLT-383fb0e1-3a83-472f-a5fd-6795bf0a3042,Test User,testuser,password,studentId123,student,true
+CLT-67cc4b22-556a-43b4-9765-6bd7fccf06b1,Test User,testuser,password,studentId123,student,true
+CLT-6cd854da-2a71-489c-889f-55c3577ffba1,Test User,testuser,password,student,studentId123,true
+CLT-c48ad254-ff88-41f1-91fe-cd6543875796,Carol,carol123,pass789,student,studentId4,true
+CLT-7906275c-b56c-4cd2-903f-f0cfb9adee45,Alice,alice123,pass123,student,studentId,false
+CLT-502d81e2-1e94-4eb2-8d2c-57b0565ac5d4,Carol,carol123,pass789,student,studentId4,true
+CLT-112b20fb-1560-4f90-b358-301c75e40ba0,Bob,bob123,pass456,student,studentId2,false
+CLT-1c3921cb-fc0f-43bd-a9f1-48927859572b,Frank,frank123,pass000,student,studentId6,false
+CLT-16ae7bca-1416-4df7-9d71-3ba2763ceb9c,David,david123,password,faculty,facultyId,true
+CLT-79830f81-cb16-49e4-95b3-ee1f69867dfa,Eve,eve123,correctpass,staff,staffId,true
+CLT-f595992a-8123-4eb7-92b2-0d66d3d464db,TestClient,testuser,testpass,student,studentId7,true
+CLT-247b7886-9920-45a5-9b3d-0b804f13358f,Carol,carol123,pass789,student,studentId4,true
+CLT-92653ea9-6a66-446c-acbe-bb849de478c2,Alice,alice123,pass123,student,studentId,false
+CLT-dcec4385-f729-4c5d-84a5-b9d9e02de262,Carol,carol123,pass789,student,studentId4,true
+CLT-77c22a90-92c2-45f6-b85a-5d0dcd0b4a2c,Bob,bob123,pass456,student,studentId2,false
+CLT-8cb4e13a-4c3a-4625-9bd6-76b9952a43ca,Frank,frank123,pass000,student,studentId6,false
+CLT-d01178e1-4e34-4fcf-9b7c-d1efc565e7a0,David,david123,password,faculty,facultyId,true
+CLT-956bc248-f106-4c1f-a99c-2b54960704c4,Eve,eve123,correctpass,staff,staffId,true
+CLT-a23541b6-091d-4250-b1c0-0f2c7e5a3cad,TestClient,testuser,testpass,student,studentId7,true
+CLT-a324af94-fae7-46e7-9e4f-e4044307d3fb,Carol,carol123,pass789,student,studentId4,true
+CLT-7d7f055f-f835-45cd-ac8e-9ce59c6b080e,Alice,alice123,pass123,student,studentId,true
+CLT-d902f8f9-6fe6-478b-9b01-de340d8376cf,Carol,carol123,pass789,student,studentId4,true
+CLT-4b9648f9-1727-4358-b4ef-a3cefcdcc1fd,Bob,bob123,pass456,student,studentId2,false
+CLT-70231a0b-555e-4c09-99a6-1d057828ca36,Frank,frank123,pass000,student,studentId6,false
+CLT-7060e1b8-3f1e-4d2e-9a54-6fbe4e4b9ab5,David,david123,password,faculty,facultyId,true
+CLT-b01d4c14-9547-4d75-87aa-1d719f3d9697,Eve,eve123,correctpass,staff,staffId,true
+CLT-e2e7ce3b-f819-433c-a1a2-2e88c11e902d,TestClient,testuser,testpass,student,studentId7,true
+CLT-8684c074-9060-45a2-b91b-5b344417135a,Test User,testuser,password,student,studentId123,true
+CLT-a55ca287-aed2-4de4-878e-09a73f05ef53,Test User,testuser,password,student,studentId123,true
+CLT-b376d8b8-a5a5-45b0-86a9-d1977155d3b9,Test User,testuser,password,student,studentId123,true
