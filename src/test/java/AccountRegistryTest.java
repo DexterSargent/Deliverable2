@@ -19,6 +19,9 @@ public class AccountRegistryTest {
 	public void testRegisterClientSuccess() {
 		boolean result = registry.registerClient("Alice", "alice123", "pass123", "student", "studentId");
 		assertTrue(result);
+		String clientId = registry.displayPendingValidations().get(0).getClientId();
+		registry.validateClient(clientId);
+		assertEquals("student", registry.getClient(clientId).getClientType());
 	}
 	
 	@Test
