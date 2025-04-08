@@ -1,11 +1,17 @@
 package ParkingSystem;
 
 public class ParkingSpaceFacade {
+    private final BookingManager bookingManager;
+    private final CheckInManager checkInManager;
+    private final SpaceManager spaceManager;
 
-	private BookingManager bookingManager = new BookingManager();
-	private CheckInManager checkInManager = new CheckInManager(bookingManager);
-	private SpaceManager spaceManager = new SpaceManager();
-	
+    public ParkingSpaceFacade() {
+        this.spaceManager = new SpaceManager();
+        this.spaceManager.loadParkingLots();
+        this.bookingManager = new BookingManager();
+        this.checkInManager = new CheckInManager(bookingManager);
+    }
+
 	public boolean confirmBooking(String clientId, String clientType, String licensePlate, String lotId, int spaceId, String startTime, int duration, String paymentType, String cardNumber) {
 		return bookingManager.confirmBooking(clientId, clientType, licensePlate, lotId, spaceId, startTime, duration, paymentType, cardNumber);
 	}
@@ -63,5 +69,13 @@ public class ParkingSpaceFacade {
 
 	public SpaceManager getSpaceManager() {
 		return spaceManager;
+	}
+	
+	public BookingManager getBookingManager() {
+		return bookingManager;
+	}
+	
+	public CheckInManager getCheckInManager() {
+		return checkInManager;
 	}
 }

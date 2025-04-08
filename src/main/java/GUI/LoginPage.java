@@ -48,7 +48,6 @@ public class LoginPage  implements ActionListener {
              String user = username.getText();
              String pass = password.getText();
              
-             //save the info in client list
              System.out.println("Login attempt: " + user + "/" + pass);
              frame.dispose();
              new Booking();

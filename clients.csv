@@ -52,3 +52,22 @@ CLT-e2e7ce3b-f819-433c-a1a2-2e88c11e902d,TestClient,testuser,testpass,student,st
 CLT-8684c074-9060-45a2-b91b-5b344417135a,Test User,testuser,password,student,studentId123,true
 CLT-a55ca287-aed2-4de4-878e-09a73f05ef53,Test User,testuser,password,student,studentId123,true
 CLT-b376d8b8-a5a5-45b0-86a9-d1977155d3b9,Test User,testuser,password,student,studentId123,true
+CLT-b52be615-1d59-4cee-8e7d-592007aa73e2,Carol,carol123,pass789,student,studentId4,true
+CLT-59f7f67f-a541-4ee9-9eba-cfa0c1a6b752,Alice,alice123,pass123,student,studentId,true
+CLT-6b27d53a-e2ff-472c-8d46-f6c8b25f6293,Carol,carol123,pass789,student,studentId4,true
+CLT-fc8ee05f-850f-4ffe-b49e-86e2c0dc09a4,Bob,bob123,pass456,student,studentId2,false
+CLT-4b6d38e8-1e1a-4944-bd40-5680f7c95536,Frank,frank123,pass000,student,studentId6,false
+CLT-139955c1-d7ca-4dbb-9166-e9a4312f3092,David,david123,password,faculty,facultyId,true
+CLT-9391a3d2-8f87-4c83-b31c-30e780e9905e,Eve,eve123,correctpass,staff,staffId,true
+CLT-f052d232-88bd-482e-a54e-d37648d7fb40,TestClient,testuser,testpass,student,studentId7,true
+CLT-8e549115-dff8-4029-99f2-a7a0443bfc29,Test User,testuser,password,student,studentId123,true
+CLT-43b39eae-911c-4714-b7b5-c7439633ad54,Test User,testuser,password,student,studentId123,true
+CLT-1c473f83-34db-47e1-971b-d1f57a609b33,Carol,carol123,pass789,student,studentId4,true
+CLT-9d8423af-4d69-40b5-a923-b103fb8b14fa,Alice,alice123,pass123,student,studentId,true
+CLT-6e7c4f68-d906-4b8d-844d-dac056b90bb1,Carol,carol123,pass789,student,studentId4,true
+CLT-c2d41e74-c5b1-4bf6-ae29-0fd71bf6c37c,Bob,bob123,pass456,student,studentId2,false
+CLT-0ca4e504-e207-4a8f-b972-2fd227b5086b,Frank,frank123,pass000,student,studentId6,false
+CLT-7a29f9fa-5bdf-4b8f-afed-9dbb7ff20879,David,david123,password,faculty,facultyId,true
+CLT-e504ba6c-2456-4fa2-9a74-78fd8d01c9c6,Eve,eve123,correctpass,staff,staffId,true
+CLT-6cbebbd6-9b6e-4f2e-8c06-868222a8cac6,TestClient,testuser,testpass,student,studentId7,true
+CLT-debdeabf-5acd-4d9f-acc9-8ac568d5158d,Alice,alice123,password,client,ID001,true

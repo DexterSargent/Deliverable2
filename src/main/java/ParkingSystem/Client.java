@@ -104,4 +104,7 @@ public class Client {
 			this.isValidated = isValidated;
 	}
 
+    public static void reset() {
+        client = null;
+    }
 }

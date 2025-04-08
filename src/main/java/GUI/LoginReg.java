@@ -42,7 +42,6 @@ public class LoginReg implements ActionListener {
         AccountRegistry registry = proxy.getRegistry();
         registry.loadClientsFromCSV();
         registry.loadManagersFromCSV();
-        registry.loadSuperManagerFromCSV();
 
         // Load parking lots
         SpaceManager spaceManager = proxy.getFacade().getSpaceManager();

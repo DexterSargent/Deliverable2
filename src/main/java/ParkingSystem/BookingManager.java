@@ -6,12 +6,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BookingManager {
-    private final PaymentManager paymentManager = new PaymentManager();
-    private final SpaceManager spaceManager = new SpaceManager();
+    private final PaymentManager paymentManager;
+    private final SpaceManager spaceManager;
+    private final AccountRegistry accountRegistry;
     private final Map<String, Booking> activeBookings = new HashMap<>();
-    private final AccountRegistry accountRegistry = new AccountRegistry(); 
 
-    public BookingManager() {}
+    public BookingManager() {
+        this.paymentManager = new PaymentManager();
+        this.spaceManager = new SpaceManager();
+        this.accountRegistry = new AccountRegistry();
+        this.spaceManager.loadParkingLots();
+    }
     
     public double calculateCost(String clientType, int duration) {
     	double hourlyRate = getHourlyRate(clientType);

@@ -36,7 +36,7 @@ public class Manager {
         return name; 
     }
     
-    protected String getPassword() {
+    public String getPassword() {
     	return password;
     }
 
@@ -44,5 +44,9 @@ public class Manager {
         this.managerId = managerId;
         this.name = name;
         this.password = password;
+    }
+    
+    public static void reset() {
+        instance = null;
     }
 }

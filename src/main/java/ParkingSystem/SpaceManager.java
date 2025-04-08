@@ -59,7 +59,7 @@ public class SpaceManager {
         csvManager.saveParkingLots(parkingLots);
     }
 
-    Map<String, ParkingLot> getParkingLots() {
+    public Map<String, ParkingLot> getParkingLots() {
         return parkingLots;
     }
 }

@@ -7,10 +7,10 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class CSVManager {
-    private String clientFile = "clients.csv";
-    private String managerFile = "managers.csv";
-    private String superManagerfile = "super_manager.csv"; // Note lowercase 'f' per diagram
-    private String parkingLotFile = "parking_lots.csv";
+    private String clientFile = "~/src/main/resources/managers.csv";
+    private String managerFile = "~/src/main/resources/managers.csv";
+    private String superManagerfile = "~/src/main/resources/super_manager.csv";
+    private String parkingLotFile = "~/src/main/resources/parking_lots.csv";
 
     public List<Client> loadClients() {
         List<String[]> records = readCSV(clientFile);

@@ -32,12 +32,14 @@ public class AccountRegistry {
     }
 
     public void loadSuperManagerFromCSV() {
-        superManager = SuperManager.createFromCSV(
-            csvManager.loadSuperManager()[0],
-            csvManager.loadSuperManager()[1],
-            csvManager.loadSuperManager()[2],
-            this
-        );
+        if (superManager == null) {
+            superManager = SuperManager.createFromCSV(
+                csvManager.loadSuperManager()[0],
+                csvManager.loadSuperManager()[1],
+                csvManager.loadSuperManager()[2],
+                this
+            );
+        }
     }
 
     public void assignProxyToClient(String clientId, ParkingSpaceProxy proxy) {
@@ -92,7 +94,7 @@ public class AccountRegistry {
     }
 
 
-    public void autoGenerateManager() {
+    public Manager autoGenerateManager() {
         String randomName = generateRandomString(8);
         String randomPassword = generateRandomString(10);
 
@@ -102,13 +104,12 @@ public class AccountRegistry {
             randomName,
             randomPassword
         );
+     
 
         managers.put(manager.getManagerId(), manager);
         csvManager.saveManager(manager);
 
-        System.out.println("Generated Manager:");
-        System.out.println("Username: " + randomName);
-        System.out.println("Password: " + randomPassword);
+        return manager;
     }
 
     private String generateRandomString(int length) {
@@ -156,7 +157,7 @@ public class AccountRegistry {
             if (m.getName().equals(username) && m.getPassword().equals(password)) {
                 Manager manager = Manager.getInstance();
                 manager.setManagerInfo(
-                    m.getManagerId(),  // or however your manager data is structured
+                    m.getManagerId(),
                     m.getName(),
                     m.getPassword()
                 );
@@ -168,7 +169,7 @@ public class AccountRegistry {
         if (superManager != null && superManager.getName().equals(username)
             && superManager.getPassword().equals(password)) {
         	superManager.assignProxy(proxy);
-            return superManager;  // assuming superManager is a singleton or already exists
+            return superManager;
         }
 
         return null;

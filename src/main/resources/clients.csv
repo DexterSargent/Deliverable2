@@ -1,3 +1,3 @@
-CLT-1,Alice,alice123,pass123,student,,U001,True
-CLT-2,Bob,bob456,pass456,faculty,,U002,True
-CLT-3,Carol,carol789,pass789,visitor,,,True
+CLT-1,Alice,alice123,pass123,student,U001,TRUE
+CLT-2,Bob,bob456,pass456,faculty,U002,TRUE
+CLT-3,Carol,carol789,pass789,visitor,,TRUE
