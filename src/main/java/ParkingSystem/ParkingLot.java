@@ -46,7 +46,7 @@ public class ParkingLot {
         return new ParkingLotIterator(parkingSpaces.values());
     }
 
-    String getLotId() {
+    public String getLotId() {
         return lotId;
     }
 

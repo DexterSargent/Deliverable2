@@ -21,8 +21,8 @@ public class PaymentPage extends JFrame {
     private Booking booking;
     private PaymentManager paymentManager;
 
-    public PaymentPage(Booking booking) {
-        this.booking = booking;
+    public PaymentPage(GUI.Booking b) {
+        this.booking = b;
         initializeUI();
     }
 
