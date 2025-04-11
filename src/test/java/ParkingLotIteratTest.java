@@ -30,6 +30,7 @@ private ParkingLot parkingLot;
 		
 		while(iterator.hasNext())
 		{
+			iterator.next();
 			count++;
 		}
 		
