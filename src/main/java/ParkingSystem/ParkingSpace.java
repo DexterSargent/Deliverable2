@@ -2,7 +2,7 @@ package ParkingSystem;
 
 public class ParkingSpace {
     private final int spaceId;
-    private spaceState state;
+    private SpaceState state;
     private Booking currentBooking;
 
     public ParkingSpace(int spaceId) {
@@ -30,7 +30,7 @@ public class ParkingSpace {
         return state.scanSpace(this);
     }
 
-    public void setState(spaceState state) {
+    public void setState(SpaceState state) {
         this.state = state;
     }
 
@@ -42,7 +42,7 @@ public class ParkingSpace {
 		return spaceId;
 	}
 
-	public spaceState getState() {
+	public SpaceState getState() {
 		return state;
 	}
 }

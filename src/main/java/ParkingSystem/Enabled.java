@@ -1,6 +1,6 @@
 package ParkingSystem;
 
-public class Enabled implements spaceState {
+public class Enabled implements SpaceState {
 	
     @Override
     public String scanSpace(ParkingSpace space) {

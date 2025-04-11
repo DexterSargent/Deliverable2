@@ -487,3 +487,59 @@ CLT-8b4439d2-76ef-4dae-a6cc-6f4fa6cfc860,John Doe,johndoe,password123,visitor,,t
 CLT-8320d24d-618e-4d82-afae-7946fe95b985,Student,studentUser,pass123,student,STU-001,false
 CLT-f505ef28-d775-4768-916a-feac5c4c749b,John Doe,johndoe,password123,visitor,,true
 CLT-21a35fce-c801-461b-af1f-398d06ed1f78,John Doe,johndoe,password123,visitor,,true
+CLT-10dab30e-6d59-41ba-93c5-f0cc1e13d7ef,Test User,testuser,password,student,studentId123,true
+CLT-5106b0a8-f939-40a6-b169-1e29309e5e3b,Test Client,testUserefa5d7ee-c7a4-4149-b632-c171a4a57e1c,password,visitor,,true
+CLT-0a2a5d1c-cbb8-4ac2-b9e1-b3956c9c7ab4,Test Client,testUser509b1448-84ff-420c-83e9-53966c64b120,password,visitor,,true
+5da86129-702f-4faf-b4f8-9e54ab30f627,5nP6LYe0,MQTesSieMJ
+e4b5997a-824d-488d-8e5d-ba223095eb6f,mRH6tJlr,pYJwaukurv
+75efa048-4836-4db1-b204-a91541ec46cc,c4NTQYUq,l3e1jPPf66
+1febb034-600d-44b7-b80c-38a7d4bff922,PFfEhOgV,xX8HJOlEp1
+c6050dce-5790-4526-809c-6fd1cc211748,ad4cNnlb,doTA9zp2QZ
+b9de38fd-8f93-4c37-a5f4-b190cd55e93d,YpwrTmYh,WSTyicFUAd
+a47015d4-d707-4faa-ae76-607272838907,fp1Q3fEp,klwqTXiLOp
+a62ca91e-d991-455f-bd5c-b06de590f1b5,dxB5UAEN,aiQe5RgbPK
+075ca69a-7dd6-4d4f-a479-bb21a11ae729,LBEWxKvg,yrfFVJ9qMU
+CLT-ec4a6887-9f3a-473b-865a-335a1706ae57,Test User,testuser,password,student,studentId123,true
+CLT-3f51be91-aace-42a4-94bf-22ecfbe0cef6,Carol,carol123,pass789,student,studentId4,true
+CLT-bd050aa1-2d19-43b1-9a35-5ef10b9a79be,Alice,alice123,pass123,student,studentId,true
+CLT-7f7914e1-079f-4015-bb9e-8f5c8c69fa23,Carol,carol123,pass789,student,studentId4,true
+CLT-be6355c0-8c71-4331-9fa5-423a39e5537b,Bob,bob123,pass456,student,studentId2,false
+CLT-221aa03e-2db2-41df-b44d-2540375a5d41,Frank,frank123,pass000,student,studentId6,false
+58e0cf4c-f5b8-48b7-b218-cdf373dc330f,wc6w8N3W,TtjHJi2qBG
+CLT-5e5dabe3-4e29-4dea-89a4-297f460e5fd2,David,david123,password,faculty,facultyId,true
+CLT-a220ba11-23f2-46b3-9eac-142baaa9de3f,Eve,eve123,correctpass,staff,staffId,true
+CLT-6358f697-acc5-4efa-8d13-c30752ee0417,TestClient,testuser,testpass,student,studentId7,true
+4b699d5b-0120-4044-a51f-ccaf8bcf4196,CXLEWi5H,UjmjdHL6EL
+CLT-0ccf0faa-075d-4e2d-90a1-31535709e1e2,Staff,staffUser,pass123,staff,STAFF-001,true
+CLT-0e6642dd-157d-4f3f-bc8c-157ffbdd761c,John Doe,johndoe,password123,visitor,,true
+CLT-388dd941-6d77-48c4-b45a-2707e20e4290,Student,studentUser,pass123,student,STU-001,false
+CLT-6fea0f3e-45bb-407b-9c02-59d2ca823209,John Doe,johndoe,password123,visitor,,true
+CLT-ca395f95-7fe0-469f-b997-db140f6ada6b,John Doe,johndoe,password123,visitor,,true
+CLT-51572d80-0633-48c5-9d26-1b2748367065,Test User,testuser,password,student,studentId123,true
+CLT-4686f703-ce67-46a2-8d44-8d3bc29af03e,Test Client,testUser4e3f3986-86e9-4ad2-9f19-98fc084c89ef,password,visitor,,true
+CLT-3feb71e4-96e2-43ce-a578-a3b4e87a4e55,Test Client,testUsercfa69d47-eae1-4fe5-876b-0d3c578e54a0,password,visitor,,true
+1a71b33a-221c-47f9-8b15-995199e6be19,0AEZCs8f,5YbIVZb6GG
+959c3e4c-01fe-474f-ac90-480afbf201f0,zmZtGwiM,EgARgsgKfF
+4982b1c8-7149-42d2-8532-801f5f08fe64,EniRxkD7,9WvX1VBfnW
+d95b1574-3499-474a-aea9-513c8ceddff2,0yo1q2D4,N920o87siE
+f020b7ad-8d3d-4045-873e-3a071e14647d,XloEJvhn,BFMEp03vpT
+6f8e184a-f474-4786-8120-8aa740847c35,DbrMpta6,MV6tpOkQl7
+0c337436-bc30-4a81-bd2d-faadbdbb499d,NviIJBNh,T1N7CUAX6T
+1c13110a-ef03-4092-9867-d4dd9d69693b,qqgOVPLq,Y9hFS5p1uV
+3f42bfdc-7e3a-4f93-b3b8-2d11743478ce,kt2FfxXb,mVooV1doB7
+CLT-1e269dfd-e425-4130-8881-6fbf6b573aac,Test User,testuser,password,student,studentId123,true
+CLT-4f48d56a-4c7a-49d5-9fbc-a0c9d7d4adbf,Carol,carol123,pass789,student,studentId4,true
+CLT-9d92613e-5a66-44ad-9f46-f49fec36fd6c,Alice,alice123,pass123,student,studentId,true
+CLT-9c8f99aa-9f1e-4d08-8b12-6f0d6cfd947c,Carol,carol123,pass789,student,studentId4,true
+CLT-84dc6ef0-2103-4ca4-a319-66e532a6f957,Bob,bob123,pass456,student,studentId2,false
+CLT-51337a8f-d56e-4c84-b8d8-0bdd37c27ecd,Frank,frank123,pass000,student,studentId6,false
+bfcd2fb7-3683-4a9d-a6b2-e9d220d172dd,2Hg1xNLJ,S67dut4dDW
+CLT-f5668b80-210f-4db5-83aa-9bf6ddf87262,David,david123,password,faculty,facultyId,true
+CLT-b91aee82-9537-4b9d-9431-6ead182a4f50,Eve,eve123,correctpass,staff,staffId,true
+CLT-b3e7a393-ca7d-4077-b209-87066272d798,TestClient,testuser,testpass,student,studentId7,true
+7749d87f-3cc4-40a9-9034-a7edd48ab61f,ihM8IejG,4NobDKvyiL
+CLT-87a9c919-92f8-4a3d-8618-733663d0394b,Staff,staffUser,pass123,staff,STAFF-001,true
+CLT-c813cda1-1d39-489f-a978-fb4ccbb4aa80,John Doe,johndoe,password123,visitor,,true
+CLT-b0b05ad2-0c61-4126-adaa-bb2f024d949b,Student,studentUser,pass123,student,STU-001,false
+CLT-9a4ac4c7-afbf-41f9-826b-ceba931dd343,John Doe,johndoe,password123,visitor,,true
+CLT-688cdf8d-e96a-443b-95bb-f89b1643547d,John Doe,johndoe,password123,visitor,,true

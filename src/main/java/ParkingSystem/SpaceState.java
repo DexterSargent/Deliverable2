@@ -1,6 +1,6 @@
 package ParkingSystem;
 
-public interface spaceState {
+public interface SpaceState {
 
 	public String scanSpace(ParkingSpace space);
 }
