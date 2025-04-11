@@ -123,6 +123,7 @@ public class ParkingLotTest {
 		
 		while(iterator.hasNext() == true)
 		{
+			iterator.next();
 			count++;
 		}
 		
