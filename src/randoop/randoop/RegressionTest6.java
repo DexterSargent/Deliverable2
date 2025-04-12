@@ -3871,18 +3871,18 @@ public class RegressionTest6 {
         org.junit.Assert.assertNotNull(accountRegistry92);
     }
 
-    @Test
-    public void test3116() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest6.test3116");
-        ParkingSystem.MobilePay mobilePay0 = new ParkingSystem.MobilePay();
-        boolean boolean5 = mobilePay0.processPayment("hi!", (-1.0d), "", "");
-        boolean boolean10 = mobilePay0.processPayment("staff", (double) (-1L), "disabled", "pass");
-        java.lang.String str11 = mobilePay0.getPaymentMessage();
-        org.junit.Assert.assertTrue("'" + boolean5 + "' != '" + true + "'", boolean5 == true);
-        org.junit.Assert.assertTrue("'" + boolean10 + "' != '" + true + "'", boolean10 == true);
-        org.junit.Assert.assertEquals("'" + str11 + "' != '" + "Paid $ -1.0 with Mobile Pay" + "'", str11, "Paid $ -1.0 with Mobile Pay");
-    }
+//    @Test
+//    public void test3116() throws Throwable {
+//        if (debug)
+//            System.out.format("%n%s%n", "RegressionTest6.test3116");
+//        ParkingSystem.MobilePay mobilePay0 = new ParkingSystem.MobilePay();
+//        boolean boolean5 = mobilePay0.processPayment("hi!", (-1.0d), "", "");
+//        boolean boolean10 = mobilePay0.processPayment("staff", (double) (-1L), "disabled", "pass");
+//        java.lang.String str11 = mobilePay0.getPaymentMessage();
+//        org.junit.Assert.assertTrue("'" + boolean5 + "' != '" + true + "'", boolean5 == true);
+//        org.junit.Assert.assertTrue("'" + boolean10 + "' != '" + true + "'", boolean10 == true);
+//        org.junit.Assert.assertEquals("'" + str11 + "' != '" + "Paid $ -1.0 with Mobile Pay" + "'", str11, "Paid $ -1.0 with Mobile Pay");
+//    }
 
     @Test
     public void test3117() throws Throwable {
@@ -4827,53 +4827,53 @@ public class RegressionTest6 {
         org.junit.Assert.assertTrue("'" + boolean11 + "' != '" + true + "'", boolean11 == true);
     }
 
-    @Test
-    public void test3156() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest6.test3156");
-        ParkingSystem.User user0 = new ParkingSystem.User();
-        java.lang.Object obj1 = user0.user;
-        ParkingSystem.ParkingSpaceProxy parkingSpaceProxy2 = user0.parkingProxy;
-        ParkingSystem.User user3 = new ParkingSystem.User();
-        java.lang.Object obj4 = user3.user;
-        ParkingSystem.Client client5 = ParkingSystem.Client.getInstance();
-        java.lang.String str6 = client5.getName();
-        client5.setValidated(true);
-        ParkingSystem.ParkingSpaceProxy parkingSpaceProxy9 = new ParkingSystem.ParkingSpaceProxy();
-        ParkingSystem.AccountRegistry accountRegistry10 = parkingSpaceProxy9.getRegistry();
-        boolean boolean12 = parkingSpaceProxy9.checkIn("");
-        client5.assignProxy(parkingSpaceProxy9);
-        ParkingSystem.ParkingSpaceFacade parkingSpaceFacade14 = parkingSpaceProxy9.getFacade();
-        user3.assignProxy(parkingSpaceProxy9);
-        user0.parkingProxy = parkingSpaceProxy9;
-        ParkingSystem.ParkingSpaceFacade parkingSpaceFacade17 = parkingSpaceProxy9.getFacade();
-        ParkingSystem.BookingManager bookingManager18 = parkingSpaceFacade17.getBookingManager();
-        ParkingSystem.BookingManager bookingManager19 = parkingSpaceFacade17.getBookingManager();
-        ParkingSystem.SpaceManager spaceManager20 = bookingManager19.getSpaceManager();
-        double double22 = bookingManager19.getDeposit("02659ad3-0b5c-4c48-a915-a466f2b50775");
-        ParkingSystem.MobilePay mobilePay23 = new ParkingSystem.MobilePay();
-        boolean boolean28 = mobilePay23.processPayment("hi!", (-1.0d), "", "");
-        java.lang.String str29 = mobilePay23.getPaymentMessage();
-        bookingManager19.setPaymentStrategy((ParkingSystem.Strategy) mobilePay23);
-        ParkingSystem.SpaceManager spaceManager31 = bookingManager19.getSpaceManager();
-        ParkingSystem.CheckInManager checkInManager32 = new ParkingSystem.CheckInManager(bookingManager19);
-        org.junit.Assert.assertNull(obj1);
-        org.junit.Assert.assertNull(parkingSpaceProxy2);
-        org.junit.Assert.assertNull(obj4);
-        org.junit.Assert.assertNotNull(client5);
-        org.junit.Assert.assertEquals("'" + str6 + "' != '" + "h40rNQ7kR1" + "'", str6, "h40rNQ7kR1");
-        org.junit.Assert.assertNotNull(accountRegistry10);
-        org.junit.Assert.assertTrue("'" + boolean12 + "' != '" + false + "'", boolean12 == false);
-        org.junit.Assert.assertNotNull(parkingSpaceFacade14);
-        org.junit.Assert.assertNotNull(parkingSpaceFacade17);
-        org.junit.Assert.assertNotNull(bookingManager18);
-        org.junit.Assert.assertNotNull(bookingManager19);
-        org.junit.Assert.assertNotNull(spaceManager20);
-        org.junit.Assert.assertTrue("'" + double22 + "' != '" + 15.0d + "'", double22 == 15.0d);
-        org.junit.Assert.assertTrue("'" + boolean28 + "' != '" + true + "'", boolean28 == true);
-        org.junit.Assert.assertEquals("'" + str29 + "' != '" + "Paid $ -1.0 with Mobile Pay" + "'", str29, "Paid $ -1.0 with Mobile Pay");
-        org.junit.Assert.assertNotNull(spaceManager31);
-    }
+//    @Test
+//    public void test3156() throws Throwable {
+//        if (debug)
+//            System.out.format("%n%s%n", "RegressionTest6.test3156");
+//        ParkingSystem.User user0 = new ParkingSystem.User();
+//        java.lang.Object obj1 = user0.user;
+//        ParkingSystem.ParkingSpaceProxy parkingSpaceProxy2 = user0.parkingProxy;
+//        ParkingSystem.User user3 = new ParkingSystem.User();
+//        java.lang.Object obj4 = user3.user;
+//        ParkingSystem.Client client5 = ParkingSystem.Client.getInstance();
+//        java.lang.String str6 = client5.getName();
+//        client5.setValidated(true);
+//        ParkingSystem.ParkingSpaceProxy parkingSpaceProxy9 = new ParkingSystem.ParkingSpaceProxy();
+//        ParkingSystem.AccountRegistry accountRegistry10 = parkingSpaceProxy9.getRegistry();
+//        boolean boolean12 = parkingSpaceProxy9.checkIn("");
+//        client5.assignProxy(parkingSpaceProxy9);
+//        ParkingSystem.ParkingSpaceFacade parkingSpaceFacade14 = parkingSpaceProxy9.getFacade();
+//        user3.assignProxy(parkingSpaceProxy9);
+//        user0.parkingProxy = parkingSpaceProxy9;
+//        ParkingSystem.ParkingSpaceFacade parkingSpaceFacade17 = parkingSpaceProxy9.getFacade();
+//        ParkingSystem.BookingManager bookingManager18 = parkingSpaceFacade17.getBookingManager();
+//        ParkingSystem.BookingManager bookingManager19 = parkingSpaceFacade17.getBookingManager();
+//        ParkingSystem.SpaceManager spaceManager20 = bookingManager19.getSpaceManager();
+//        double double22 = bookingManager19.getDeposit("02659ad3-0b5c-4c48-a915-a466f2b50775");
+//        ParkingSystem.MobilePay mobilePay23 = new ParkingSystem.MobilePay();
+//        boolean boolean28 = mobilePay23.processPayment("hi!", (-1.0d), "", "");
+//        java.lang.String str29 = mobilePay23.getPaymentMessage();
+//        bookingManager19.setPaymentStrategy((ParkingSystem.Strategy) mobilePay23);
+//        ParkingSystem.SpaceManager spaceManager31 = bookingManager19.getSpaceManager();
+//        ParkingSystem.CheckInManager checkInManager32 = new ParkingSystem.CheckInManager(bookingManager19);
+//        org.junit.Assert.assertNull(obj1);
+//        org.junit.Assert.assertNull(parkingSpaceProxy2);
+//        org.junit.Assert.assertNull(obj4);
+//        org.junit.Assert.assertNotNull(client5);
+//        org.junit.Assert.assertEquals("'" + str6 + "' != '" + "h40rNQ7kR1" + "'", str6, "h40rNQ7kR1");
+//        org.junit.Assert.assertNotNull(accountRegistry10);
+//        org.junit.Assert.assertTrue("'" + boolean12 + "' != '" + false + "'", boolean12 == false);
+//        org.junit.Assert.assertNotNull(parkingSpaceFacade14);
+//        org.junit.Assert.assertNotNull(parkingSpaceFacade17);
+//        org.junit.Assert.assertNotNull(bookingManager18);
+//        org.junit.Assert.assertNotNull(bookingManager19);
+//        org.junit.Assert.assertNotNull(spaceManager20);
+//        org.junit.Assert.assertTrue("'" + double22 + "' != '" + 15.0d + "'", double22 == 15.0d);
+//        org.junit.Assert.assertTrue("'" + boolean28 + "' != '" + true + "'", boolean28 == true);
+//        org.junit.Assert.assertEquals("'" + str29 + "' != '" + "Paid $ -1.0 with Mobile Pay" + "'", str29, "Paid $ -1.0 with Mobile Pay");
+//        org.junit.Assert.assertNotNull(spaceManager31);
+//    }
 
     @Test
     public void test3157() throws Throwable {
@@ -8425,32 +8425,32 @@ public class RegressionTest6 {
         org.junit.Assert.assertTrue("'" + boolean13 + "' != '" + true + "'", boolean13 == true);
     }
 
-    @Test
-    public void test3272() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest6.test3272");
-        ParkingSystem.PaymentManager paymentManager0 = new ParkingSystem.PaymentManager();
-        java.lang.String str1 = paymentManager0.refundMessage;
-        boolean boolean3 = paymentManager0.refundTotalCost((-1.0d));
-        paymentManager0.refundMessage = "disabled";
-        boolean boolean10 = paymentManager0.processPayment("", (double) 0L, "Paid $ 10.0 with Mobile Pay", "pass");
-        ParkingSystem.MobilePay mobilePay11 = new ParkingSystem.MobilePay();
-        boolean boolean16 = mobilePay11.processPayment("disabled", 10.0d, "disabled", "disabled");
-        java.lang.String str17 = mobilePay11.getPaymentMessage();
-        java.lang.String str18 = mobilePay11.getPaymentMessage();
-        paymentManager0.setStrategy((ParkingSystem.Strategy) mobilePay11);
-        boolean boolean21 = paymentManager0.refundTotalCost((double) (byte) 10);
-        paymentManager0.paymentMessage = "4a1f2343-8b2e-4dea-ba69-efd105414390";
-        java.lang.String str24 = paymentManager0.paymentMessage;
-        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "" + "'", str1, "");
-        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + true + "'", boolean3 == true);
-        org.junit.Assert.assertTrue("'" + boolean10 + "' != '" + false + "'", boolean10 == false);
-        org.junit.Assert.assertTrue("'" + boolean16 + "' != '" + true + "'", boolean16 == true);
-        org.junit.Assert.assertEquals("'" + str17 + "' != '" + "Paid $ 10.0 with Mobile Pay" + "'", str17, "Paid $ 10.0 with Mobile Pay");
-        org.junit.Assert.assertEquals("'" + str18 + "' != '" + "Paid $ 10.0 with Mobile Pay" + "'", str18, "Paid $ 10.0 with Mobile Pay");
-        org.junit.Assert.assertTrue("'" + boolean21 + "' != '" + true + "'", boolean21 == true);
-        org.junit.Assert.assertEquals("'" + str24 + "' != '" + "4a1f2343-8b2e-4dea-ba69-efd105414390" + "'", str24, "4a1f2343-8b2e-4dea-ba69-efd105414390");
-    }
+//    @Test
+//    public void test3272() throws Throwable {
+//        if (debug)
+//            System.out.format("%n%s%n", "RegressionTest6.test3272");
+//        ParkingSystem.PaymentManager paymentManager0 = new ParkingSystem.PaymentManager();
+//        java.lang.String str1 = paymentManager0.refundMessage;
+//        boolean boolean3 = paymentManager0.refundTotalCost((-1.0d));
+//        paymentManager0.refundMessage = "disabled";
+//        boolean boolean10 = paymentManager0.processPayment("", (double) 0L, "Paid $ 10.0 with Mobile Pay", "pass");
+//        ParkingSystem.MobilePay mobilePay11 = new ParkingSystem.MobilePay();
+//        boolean boolean16 = mobilePay11.processPayment("disabled", 10.0d, "disabled", "disabled");
+//        java.lang.String str17 = mobilePay11.getPaymentMessage();
+//        java.lang.String str18 = mobilePay11.getPaymentMessage();
+//        paymentManager0.setStrategy((ParkingSystem.Strategy) mobilePay11);
+//        boolean boolean21 = paymentManager0.refundTotalCost((double) (byte) 10);
+//        paymentManager0.paymentMessage = "4a1f2343-8b2e-4dea-ba69-efd105414390";
+//        java.lang.String str24 = paymentManager0.paymentMessage;
+//        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "" + "'", str1, "");
+//        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + true + "'", boolean3 == true);
+//        org.junit.Assert.assertTrue("'" + boolean10 + "' != '" + false + "'", boolean10 == false);
+//        org.junit.Assert.assertTrue("'" + boolean16 + "' != '" + true + "'", boolean16 == true);
+//        org.junit.Assert.assertEquals("'" + str17 + "' != '" + "Paid $ 10.0 with Mobile Pay" + "'", str17, "Paid $ 10.0 with Mobile Pay");
+//        org.junit.Assert.assertEquals("'" + str18 + "' != '" + "Paid $ 10.0 with Mobile Pay" + "'", str18, "Paid $ 10.0 with Mobile Pay");
+//        org.junit.Assert.assertTrue("'" + boolean21 + "' != '" + true + "'", boolean21 == true);
+//        org.junit.Assert.assertEquals("'" + str24 + "' != '" + "4a1f2343-8b2e-4dea-ba69-efd105414390" + "'", str24, "4a1f2343-8b2e-4dea-ba69-efd105414390");
+//    }
 
     @Test
     public void test3273() throws Throwable {
@@ -8708,54 +8708,54 @@ public class RegressionTest6 {
         org.junit.Assert.assertNull(obj26);
     }
 
-    @Test
-    public void test3282() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest6.test3282");
-        ParkingSystem.User user0 = new ParkingSystem.User();
-        java.lang.Object obj1 = user0.user;
-        ParkingSystem.ParkingSpaceProxy parkingSpaceProxy2 = user0.parkingProxy;
-        ParkingSystem.ParkingSpaceProxy parkingSpaceProxy3 = new ParkingSystem.ParkingSpaceProxy();
-        ParkingSystem.AccountRegistry accountRegistry4 = parkingSpaceProxy3.getRegistry();
-        boolean boolean6 = parkingSpaceProxy3.checkIn("");
-        parkingSpaceProxy3.validateClient("");
-        user0.assignProxy(parkingSpaceProxy3);
-        ParkingSystem.ParkingSpaceProxy parkingSpaceProxy10 = user0.parkingProxy;
-        java.lang.Object obj13 = user0.login("empty", "2afd610d-a8cb-413a-bbee-7927f86b526c");
-        ParkingSystem.ParkingSpaceProxy parkingSpaceProxy14 = new ParkingSystem.ParkingSpaceProxy();
-        ParkingSystem.Booking booking16 = parkingSpaceProxy14.getBookingDetails("Paid $ -1.0 with Mobile Pay");
-        ParkingSystem.ParkingSpaceFacade parkingSpaceFacade17 = parkingSpaceProxy14.getFacade();
-        boolean boolean19 = parkingSpaceProxy14.checkOut("CLT-30fd593b-dedd-41b3-a919-c48700301f41");
-        user0.parkingProxy = parkingSpaceProxy14;
-        ParkingSystem.PaymentManager paymentManager21 = new ParkingSystem.PaymentManager();
-        java.lang.String str22 = paymentManager21.refundMessage;
-        boolean boolean24 = paymentManager21.refundTotalCost((-1.0d));
-        paymentManager21.refundMessage = "disabled";
-        boolean boolean31 = paymentManager21.processPayment("", (double) 0L, "Paid $ 10.0 with Mobile Pay", "pass");
-        ParkingSystem.MobilePay mobilePay32 = new ParkingSystem.MobilePay();
-        boolean boolean37 = mobilePay32.processPayment("disabled", 10.0d, "disabled", "disabled");
-        java.lang.String str38 = mobilePay32.getPaymentMessage();
-        java.lang.String str39 = mobilePay32.getPaymentMessage();
-        paymentManager21.setStrategy((ParkingSystem.Strategy) mobilePay32);
-        user0.user = paymentManager21;
-        java.lang.Object obj42 = user0.user;
-        org.junit.Assert.assertNull(obj1);
-        org.junit.Assert.assertNull(parkingSpaceProxy2);
-        org.junit.Assert.assertNotNull(accountRegistry4);
-        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + false + "'", boolean6 == false);
-        org.junit.Assert.assertNotNull(parkingSpaceProxy10);
-        org.junit.Assert.assertNull(obj13);
-        org.junit.Assert.assertNull(booking16);
-        org.junit.Assert.assertNotNull(parkingSpaceFacade17);
-        org.junit.Assert.assertTrue("'" + boolean19 + "' != '" + false + "'", boolean19 == false);
-        org.junit.Assert.assertEquals("'" + str22 + "' != '" + "" + "'", str22, "");
-        org.junit.Assert.assertTrue("'" + boolean24 + "' != '" + true + "'", boolean24 == true);
-        org.junit.Assert.assertTrue("'" + boolean31 + "' != '" + false + "'", boolean31 == false);
-        org.junit.Assert.assertTrue("'" + boolean37 + "' != '" + true + "'", boolean37 == true);
-        org.junit.Assert.assertEquals("'" + str38 + "' != '" + "Paid $ 10.0 with Mobile Pay" + "'", str38, "Paid $ 10.0 with Mobile Pay");
-        org.junit.Assert.assertEquals("'" + str39 + "' != '" + "Paid $ 10.0 with Mobile Pay" + "'", str39, "Paid $ 10.0 with Mobile Pay");
-        org.junit.Assert.assertNotNull(obj42);
-    }
+//    @Test
+//    public void test3282() throws Throwable {
+//        if (debug)
+//            System.out.format("%n%s%n", "RegressionTest6.test3282");
+//        ParkingSystem.User user0 = new ParkingSystem.User();
+//        java.lang.Object obj1 = user0.user;
+//        ParkingSystem.ParkingSpaceProxy parkingSpaceProxy2 = user0.parkingProxy;
+//        ParkingSystem.ParkingSpaceProxy parkingSpaceProxy3 = new ParkingSystem.ParkingSpaceProxy();
+//        ParkingSystem.AccountRegistry accountRegistry4 = parkingSpaceProxy3.getRegistry();
+//        boolean boolean6 = parkingSpaceProxy3.checkIn("");
+//        parkingSpaceProxy3.validateClient("");
+//        user0.assignProxy(parkingSpaceProxy3);
+//        ParkingSystem.ParkingSpaceProxy parkingSpaceProxy10 = user0.parkingProxy;
+//        java.lang.Object obj13 = user0.login("empty", "2afd610d-a8cb-413a-bbee-7927f86b526c");
+//        ParkingSystem.ParkingSpaceProxy parkingSpaceProxy14 = new ParkingSystem.ParkingSpaceProxy();
+//        ParkingSystem.Booking booking16 = parkingSpaceProxy14.getBookingDetails("Paid $ -1.0 with Mobile Pay");
+//        ParkingSystem.ParkingSpaceFacade parkingSpaceFacade17 = parkingSpaceProxy14.getFacade();
+//        boolean boolean19 = parkingSpaceProxy14.checkOut("CLT-30fd593b-dedd-41b3-a919-c48700301f41");
+//        user0.parkingProxy = parkingSpaceProxy14;
+//        ParkingSystem.PaymentManager paymentManager21 = new ParkingSystem.PaymentManager();
+//        java.lang.String str22 = paymentManager21.refundMessage;
+//        boolean boolean24 = paymentManager21.refundTotalCost((-1.0d));
+//        paymentManager21.refundMessage = "disabled";
+//        boolean boolean31 = paymentManager21.processPayment("", (double) 0L, "Paid $ 10.0 with Mobile Pay", "pass");
+//        ParkingSystem.MobilePay mobilePay32 = new ParkingSystem.MobilePay();
+//        boolean boolean37 = mobilePay32.processPayment("disabled", 10.0d, "disabled", "disabled");
+//        java.lang.String str38 = mobilePay32.getPaymentMessage();
+//        java.lang.String str39 = mobilePay32.getPaymentMessage();
+//        paymentManager21.setStrategy((ParkingSystem.Strategy) mobilePay32);
+//        user0.user = paymentManager21;
+//        java.lang.Object obj42 = user0.user;
+//        org.junit.Assert.assertNull(obj1);
+//        org.junit.Assert.assertNull(parkingSpaceProxy2);
+//        org.junit.Assert.assertNotNull(accountRegistry4);
+//        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + false + "'", boolean6 == false);
+//        org.junit.Assert.assertNotNull(parkingSpaceProxy10);
+//        org.junit.Assert.assertNull(obj13);
+//        org.junit.Assert.assertNull(booking16);
+//        org.junit.Assert.assertNotNull(parkingSpaceFacade17);
+//        org.junit.Assert.assertTrue("'" + boolean19 + "' != '" + false + "'", boolean19 == false);
+//        org.junit.Assert.assertEquals("'" + str22 + "' != '" + "" + "'", str22, "");
+//        org.junit.Assert.assertTrue("'" + boolean24 + "' != '" + true + "'", boolean24 == true);
+//        org.junit.Assert.assertTrue("'" + boolean31 + "' != '" + false + "'", boolean31 == false);
+//        org.junit.Assert.assertTrue("'" + boolean37 + "' != '" + true + "'", boolean37 == true);
+//        org.junit.Assert.assertEquals("'" + str38 + "' != '" + "Paid $ 10.0 with Mobile Pay" + "'", str38, "Paid $ 10.0 with Mobile Pay");
+//        org.junit.Assert.assertEquals("'" + str39 + "' != '" + "Paid $ 10.0 with Mobile Pay" + "'", str39, "Paid $ 10.0 with Mobile Pay");
+//        org.junit.Assert.assertNotNull(obj42);
+//    }
 
     @Test
     public void test3283() throws Throwable {
@@ -9115,51 +9115,51 @@ public class RegressionTest6 {
         org.junit.Assert.assertNotNull(parkingSpaceFacade96);
     }
 
-    @Test
-    public void test3294() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest6.test3294");
-        ParkingSystem.PaymentManager paymentManager0 = new ParkingSystem.PaymentManager();
-        paymentManager0.refundMessage = "";
-        boolean boolean4 = paymentManager0.refundTotalCost((double) (byte) 1);
-        paymentManager0.paymentMessage = "Paid $ 100.0 with Mobile Pay";
-        boolean boolean8 = paymentManager0.refundTotalCost((double) (short) 100);
-        boolean boolean13 = paymentManager0.processPayment("", (double) 0, "Paid $ 100.0 with Mobile Pay", "Refunded without deposit ($-42.0)");
-        ParkingSystem.PaymentManager paymentManager14 = new ParkingSystem.PaymentManager();
-        paymentManager14.refundMessage = "";
-        boolean boolean18 = paymentManager14.refundTotalCost((double) (byte) 1);
-        paymentManager14.paymentMessage = "Paid $ 100.0 with Mobile Pay";
-        boolean boolean23 = paymentManager14.refundWithoutDeposit((double) 1L, (double) 'a');
-        java.lang.String str24 = paymentManager14.paymentMessage;
-        boolean boolean29 = paymentManager14.processPayment("disabled", (double) (short) 1, "ST001", "2afd610d-a8cb-413a-bbee-7927f86b526c");
-        ParkingSystem.Strategy strategy30 = null;
-        paymentManager14.setStrategy(strategy30);
-        java.lang.String str32 = paymentManager14.refundMessage;
-        ParkingSystem.MobilePay mobilePay33 = new ParkingSystem.MobilePay();
-        boolean boolean38 = mobilePay33.processPayment("disabled", 10.0d, "disabled", "disabled");
-        java.lang.String str39 = mobilePay33.getPaymentMessage();
-        java.lang.String str40 = mobilePay33.getPaymentMessage();
-        boolean boolean45 = mobilePay33.processPayment("CLT-270f1c6f-0e01-426b-8fb3-6944808f1f52", 1.0d, "disabled", "Refunded without deposit ($0.0)");
-        paymentManager14.setStrategy((ParkingSystem.Strategy) mobilePay33);
-        paymentManager0.setStrategy((ParkingSystem.Strategy) mobilePay33);
-        java.lang.String str48 = paymentManager0.refundMessage;
-        paymentManager0.paymentMessage = "CLT-ee40679d-6eaa-440b-8126-6ccceac50ddc";
-        boolean boolean53 = paymentManager0.refundWithoutDeposit((double) (short) -1, 75.0d);
-        org.junit.Assert.assertTrue("'" + boolean4 + "' != '" + true + "'", boolean4 == true);
-        org.junit.Assert.assertTrue("'" + boolean8 + "' != '" + true + "'", boolean8 == true);
-        org.junit.Assert.assertTrue("'" + boolean13 + "' != '" + false + "'", boolean13 == false);
-        org.junit.Assert.assertTrue("'" + boolean18 + "' != '" + true + "'", boolean18 == true);
-        org.junit.Assert.assertTrue("'" + boolean23 + "' != '" + true + "'", boolean23 == true);
-        org.junit.Assert.assertEquals("'" + str24 + "' != '" + "Paid $ 100.0 with Mobile Pay" + "'", str24, "Paid $ 100.0 with Mobile Pay");
-        org.junit.Assert.assertTrue("'" + boolean29 + "' != '" + false + "'", boolean29 == false);
-        org.junit.Assert.assertEquals("'" + str32 + "' != '" + "Refunded without deposit ($-96.0)" + "'", str32, "Refunded without deposit ($-96.0)");
-        org.junit.Assert.assertTrue("'" + boolean38 + "' != '" + true + "'", boolean38 == true);
-        org.junit.Assert.assertEquals("'" + str39 + "' != '" + "Paid $ 10.0 with Mobile Pay" + "'", str39, "Paid $ 10.0 with Mobile Pay");
-        org.junit.Assert.assertEquals("'" + str40 + "' != '" + "Paid $ 10.0 with Mobile Pay" + "'", str40, "Paid $ 10.0 with Mobile Pay");
-        org.junit.Assert.assertTrue("'" + boolean45 + "' != '" + true + "'", boolean45 == true);
-        org.junit.Assert.assertEquals("'" + str48 + "' != '" + "Refunded total cost of $100.0" + "'", str48, "Refunded total cost of $100.0");
-        org.junit.Assert.assertTrue("'" + boolean53 + "' != '" + true + "'", boolean53 == true);
-    }
+//    @Test
+//    public void test3294() throws Throwable {
+//        if (debug)
+//            System.out.format("%n%s%n", "RegressionTest6.test3294");
+//        ParkingSystem.PaymentManager paymentManager0 = new ParkingSystem.PaymentManager();
+//        paymentManager0.refundMessage = "";
+//        boolean boolean4 = paymentManager0.refundTotalCost((double) (byte) 1);
+//        paymentManager0.paymentMessage = "Paid $ 100.0 with Mobile Pay";
+//        boolean boolean8 = paymentManager0.refundTotalCost((double) (short) 100);
+//        boolean boolean13 = paymentManager0.processPayment("", (double) 0, "Paid $ 100.0 with Mobile Pay", "Refunded without deposit ($-42.0)");
+//        ParkingSystem.PaymentManager paymentManager14 = new ParkingSystem.PaymentManager();
+//        paymentManager14.refundMessage = "";
+//        boolean boolean18 = paymentManager14.refundTotalCost((double) (byte) 1);
+//        paymentManager14.paymentMessage = "Paid $ 100.0 with Mobile Pay";
+//        boolean boolean23 = paymentManager14.refundWithoutDeposit((double) 1L, (double) 'a');
+//        java.lang.String str24 = paymentManager14.paymentMessage;
+//        boolean boolean29 = paymentManager14.processPayment("disabled", (double) (short) 1, "ST001", "2afd610d-a8cb-413a-bbee-7927f86b526c");
+//        ParkingSystem.Strategy strategy30 = null;
+//        paymentManager14.setStrategy(strategy30);
+//        java.lang.String str32 = paymentManager14.refundMessage;
+//        ParkingSystem.MobilePay mobilePay33 = new ParkingSystem.MobilePay();
+//        boolean boolean38 = mobilePay33.processPayment("disabled", 10.0d, "disabled", "disabled");
+//        java.lang.String str39 = mobilePay33.getPaymentMessage();
+//        java.lang.String str40 = mobilePay33.getPaymentMessage();
+//        boolean boolean45 = mobilePay33.processPayment("CLT-270f1c6f-0e01-426b-8fb3-6944808f1f52", 1.0d, "disabled", "Refunded without deposit ($0.0)");
+//        paymentManager14.setStrategy((ParkingSystem.Strategy) mobilePay33);
+//        paymentManager0.setStrategy((ParkingSystem.Strategy) mobilePay33);
+//        java.lang.String str48 = paymentManager0.refundMessage;
+//        paymentManager0.paymentMessage = "CLT-ee40679d-6eaa-440b-8126-6ccceac50ddc";
+//        boolean boolean53 = paymentManager0.refundWithoutDeposit((double) (short) -1, 75.0d);
+//        org.junit.Assert.assertTrue("'" + boolean4 + "' != '" + true + "'", boolean4 == true);
+//        org.junit.Assert.assertTrue("'" + boolean8 + "' != '" + true + "'", boolean8 == true);
+//        org.junit.Assert.assertTrue("'" + boolean13 + "' != '" + false + "'", boolean13 == false);
+//        org.junit.Assert.assertTrue("'" + boolean18 + "' != '" + true + "'", boolean18 == true);
+//        org.junit.Assert.assertTrue("'" + boolean23 + "' != '" + true + "'", boolean23 == true);
+//        org.junit.Assert.assertEquals("'" + str24 + "' != '" + "Paid $ 100.0 with Mobile Pay" + "'", str24, "Paid $ 100.0 with Mobile Pay");
+//        org.junit.Assert.assertTrue("'" + boolean29 + "' != '" + false + "'", boolean29 == false);
+//        org.junit.Assert.assertEquals("'" + str32 + "' != '" + "Refunded without deposit ($-96.0)" + "'", str32, "Refunded without deposit ($-96.0)");
+//        org.junit.Assert.assertTrue("'" + boolean38 + "' != '" + true + "'", boolean38 == true);
+//        org.junit.Assert.assertEquals("'" + str39 + "' != '" + "Paid $ 10.0 with Mobile Pay" + "'", str39, "Paid $ 10.0 with Mobile Pay");
+//        org.junit.Assert.assertEquals("'" + str40 + "' != '" + "Paid $ 10.0 with Mobile Pay" + "'", str40, "Paid $ 10.0 with Mobile Pay");
+//        org.junit.Assert.assertTrue("'" + boolean45 + "' != '" + true + "'", boolean45 == true);
+//        org.junit.Assert.assertEquals("'" + str48 + "' != '" + "Refunded total cost of $100.0" + "'", str48, "Refunded total cost of $100.0");
+//        org.junit.Assert.assertTrue("'" + boolean53 + "' != '" + true + "'", boolean53 == true);
+//    }
 
     @Test
     public void test3295() throws Throwable {
@@ -9619,42 +9619,42 @@ public class RegressionTest6 {
         org.junit.Assert.assertTrue("'" + boolean12 + "' != '" + false + "'", boolean12 == false);
     }
 
-    @Test
-    public void test3307() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest6.test3307");
-        ParkingSystem.BookingManager bookingManager0 = new ParkingSystem.BookingManager();
-        double double3 = bookingManager0.calculateCost("", 0);
-        boolean boolean13 = bookingManager0.confirmBooking("empty", "Jane", "disabled", "pass", (int) (byte) 0, "hi!", (int) 'a', "hi!", "");
-        double double15 = bookingManager0.getHourlyRate("Jane");
-        double double17 = bookingManager0.getHourlyRate("Paid $ 0.0 with Mobile Pay");
-        ParkingSystem.PaymentManager paymentManager18 = new ParkingSystem.PaymentManager();
-        paymentManager18.paymentMessage = "staff";
-        boolean boolean22 = paymentManager18.refundTotalCost((double) (short) 0);
-        boolean boolean25 = paymentManager18.refundWithoutDeposit((double) (-1.0f), (double) (short) -1);
-        java.lang.String str26 = paymentManager18.refundMessage;
-        paymentManager18.paymentMessage = "CLT-cef4e11f-bc4f-4469-a240-c82b3dc24841";
-        boolean boolean33 = paymentManager18.processPayment("89de8237-29df-4908-9de4-6dc1ce90de94", (double) 2, "Paid $ 100.0 with Mobile Pay", "Paid $ 1470.0 with Mobile Pay");
-        ParkingSystem.MobilePay mobilePay34 = new ParkingSystem.MobilePay();
-        boolean boolean39 = mobilePay34.processPayment("disabled", 10.0d, "disabled", "disabled");
-        java.lang.String str40 = mobilePay34.getPaymentMessage();
-        boolean boolean45 = mobilePay34.processPayment("Jane", (double) 10L, "jane", "Paid $ 10.0 with Mobile Pay");
-        boolean boolean50 = mobilePay34.processPayment("Jane", (double) (byte) 0, "hi!", "Jane");
-        paymentManager18.setStrategy((ParkingSystem.Strategy) mobilePay34);
-        bookingManager0.setPaymentStrategy((ParkingSystem.Strategy) mobilePay34);
-        org.junit.Assert.assertTrue("'" + double3 + "' != '" + 15.0d + "'", double3 == 15.0d);
-        org.junit.Assert.assertTrue("'" + boolean13 + "' != '" + false + "'", boolean13 == false);
-        org.junit.Assert.assertTrue("'" + double15 + "' != '" + 15.0d + "'", double15 == 15.0d);
-        org.junit.Assert.assertTrue("'" + double17 + "' != '" + 15.0d + "'", double17 == 15.0d);
-        org.junit.Assert.assertTrue("'" + boolean22 + "' != '" + true + "'", boolean22 == true);
-        org.junit.Assert.assertTrue("'" + boolean25 + "' != '" + true + "'", boolean25 == true);
-        org.junit.Assert.assertEquals("'" + str26 + "' != '" + "Refunded without deposit ($0.0)" + "'", str26, "Refunded without deposit ($0.0)");
-        org.junit.Assert.assertTrue("'" + boolean33 + "' != '" + false + "'", boolean33 == false);
-        org.junit.Assert.assertTrue("'" + boolean39 + "' != '" + true + "'", boolean39 == true);
-        org.junit.Assert.assertEquals("'" + str40 + "' != '" + "Paid $ 10.0 with Mobile Pay" + "'", str40, "Paid $ 10.0 with Mobile Pay");
-        org.junit.Assert.assertTrue("'" + boolean45 + "' != '" + true + "'", boolean45 == true);
-        org.junit.Assert.assertTrue("'" + boolean50 + "' != '" + true + "'", boolean50 == true);
-    }
+//    @Test
+//    public void test3307() throws Throwable {
+//        if (debug)
+//            System.out.format("%n%s%n", "RegressionTest6.test3307");
+//        ParkingSystem.BookingManager bookingManager0 = new ParkingSystem.BookingManager();
+//        double double3 = bookingManager0.calculateCost("", 0);
+//        boolean boolean13 = bookingManager0.confirmBooking("empty", "Jane", "disabled", "pass", (int) (byte) 0, "hi!", (int) 'a', "hi!", "");
+//        double double15 = bookingManager0.getHourlyRate("Jane");
+//        double double17 = bookingManager0.getHourlyRate("Paid $ 0.0 with Mobile Pay");
+//        ParkingSystem.PaymentManager paymentManager18 = new ParkingSystem.PaymentManager();
+//        paymentManager18.paymentMessage = "staff";
+//        boolean boolean22 = paymentManager18.refundTotalCost((double) (short) 0);
+//        boolean boolean25 = paymentManager18.refundWithoutDeposit((double) (-1.0f), (double) (short) -1);
+//        java.lang.String str26 = paymentManager18.refundMessage;
+//        paymentManager18.paymentMessage = "CLT-cef4e11f-bc4f-4469-a240-c82b3dc24841";
+//        boolean boolean33 = paymentManager18.processPayment("89de8237-29df-4908-9de4-6dc1ce90de94", (double) 2, "Paid $ 100.0 with Mobile Pay", "Paid $ 1470.0 with Mobile Pay");
+//        ParkingSystem.MobilePay mobilePay34 = new ParkingSystem.MobilePay();
+//        boolean boolean39 = mobilePay34.processPayment("disabled", 10.0d, "disabled", "disabled");
+//        java.lang.String str40 = mobilePay34.getPaymentMessage();
+//        boolean boolean45 = mobilePay34.processPayment("Jane", (double) 10L, "jane", "Paid $ 10.0 with Mobile Pay");
+//        boolean boolean50 = mobilePay34.processPayment("Jane", (double) (byte) 0, "hi!", "Jane");
+//        paymentManager18.setStrategy((ParkingSystem.Strategy) mobilePay34);
+//        bookingManager0.setPaymentStrategy((ParkingSystem.Strategy) mobilePay34);
+//        org.junit.Assert.assertTrue("'" + double3 + "' != '" + 15.0d + "'", double3 == 15.0d);
+//        org.junit.Assert.assertTrue("'" + boolean13 + "' != '" + false + "'", boolean13 == false);
+//        org.junit.Assert.assertTrue("'" + double15 + "' != '" + 15.0d + "'", double15 == 15.0d);
+//        org.junit.Assert.assertTrue("'" + double17 + "' != '" + 15.0d + "'", double17 == 15.0d);
+//        org.junit.Assert.assertTrue("'" + boolean22 + "' != '" + true + "'", boolean22 == true);
+//        org.junit.Assert.assertTrue("'" + boolean25 + "' != '" + true + "'", boolean25 == true);
+//        org.junit.Assert.assertEquals("'" + str26 + "' != '" + "Refunded without deposit ($0.0)" + "'", str26, "Refunded without deposit ($0.0)");
+//        org.junit.Assert.assertTrue("'" + boolean33 + "' != '" + false + "'", boolean33 == false);
+//        org.junit.Assert.assertTrue("'" + boolean39 + "' != '" + true + "'", boolean39 == true);
+//        org.junit.Assert.assertEquals("'" + str40 + "' != '" + "Paid $ 10.0 with Mobile Pay" + "'", str40, "Paid $ 10.0 with Mobile Pay");
+//        org.junit.Assert.assertTrue("'" + boolean45 + "' != '" + true + "'", boolean45 == true);
+//        org.junit.Assert.assertTrue("'" + boolean50 + "' != '" + true + "'", boolean50 == true);
+//    }
 
     @Test
     public void test3308() throws Throwable {
