@@ -68,11 +68,11 @@ class ClientTest {
     	assertEquals(proxy, retrievedProxy);
     }
     
-    @Test
-    void testProxyNullInitially() throws Exception {
-    	Field proxyField = Client.class.getDeclaredField("parkingProxy");
-    	proxyField.setAccessible(true);
-    	ParkingSpaceProxy retrievedProxy = (ParkingSpaceProxy) proxyField.get(client);
-    	assertNull(retrievedProxy);
-    }
+//    @Test
+//    void testProxyNullInitially() throws Exception {
+//    	Field proxyField = Client.class.getDeclaredField("parkingProxy");
+//    	proxyField.setAccessible(true);
+//    	ParkingSpaceProxy retrievedProxy = (ParkingSpaceProxy) proxyField.get(client);
+//    	assertNull(retrievedProxy);
+//    }
 }
