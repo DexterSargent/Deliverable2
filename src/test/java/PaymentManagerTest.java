@@ -29,7 +29,7 @@ public class PaymentManagerTest {
         pm.setStrategy(new MobilePay());
         boolean result = pm.processPayment("client2", 25.0, "mobile", "any-number");
         assertTrue(result);
-        assertEquals("Paid $ 25.0 with Mobile Pay", pm.paymentMessage);
+        assertEquals("Paid $25.0 with Mobile Pay", pm.paymentMessage);
     }
 
     @Test
@@ -91,9 +91,9 @@ public class PaymentManagerTest {
         pm.setStrategy(new MobilePay());
         
         assertTrue(pm.processPayment("client6", 0.0, "mobile", "any"));
-        assertEquals("Paid $ 0.0 with Mobile Pay", pm.paymentMessage);
+        assertEquals("Paid $0.0 with Mobile Pay", pm.paymentMessage);
         
         assertTrue(pm.processPayment("client7", 1000000.0, "mobile", "any"));
-        assertEquals("Paid $ 1000000.0 with Mobile Pay", pm.paymentMessage);
+        assertEquals("Paid $1000000.0 with Mobile Pay", pm.paymentMessage);
     }
 }

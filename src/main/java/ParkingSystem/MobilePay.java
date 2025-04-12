@@ -6,7 +6,7 @@ public class MobilePay implements Strategy {
 	
     @Override
     public boolean processPayment(String clientId, double amount, String paymentType, String cardNumber) {
-    	paymentMessage = "Paid $ " + amount + " with Mobile Pay";
+    	paymentMessage = "Paid $" + amount + " with Mobile Pay";
         return true; 
     }
     

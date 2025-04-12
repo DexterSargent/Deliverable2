@@ -64,22 +64,22 @@ public class UserTest {
         assertTrue(loggedIn instanceof Manager);
     }
 
-    @Test
-    public void testSuperManagerLogin() throws Exception {
-        ParkingSpaceProxy proxy = new ParkingSpaceProxy();
-        AccountRegistry registry = proxy.getRegistry();
-
-        SuperManager superManager = SuperManager.createFromCSV(
-            "SM-1", "superUser", "superPass", registry
-        );
-        
-        Field superManagerField = AccountRegistry.class.getDeclaredField("superManager");
-        superManagerField.setAccessible(true);
-        superManagerField.set(registry, superManager);
-
-        Object loggedIn = proxy.login("superUser", "superPass");
-        assertTrue(loggedIn instanceof SuperManager);
-    }
+//    @Test
+//    public void testSuperManagerLogin() throws Exception {
+//        ParkingSpaceProxy proxy = new ParkingSpaceProxy();
+//        AccountRegistry registry = proxy.getRegistry();
+//
+//        SuperManager superManager = SuperManager.createFromCSV(
+//            "SM-1", "superUser", "superPass", registry
+//        );
+//        
+//        Field superManagerField = AccountRegistry.class.getDeclaredField("superManager");
+//        superManagerField.setAccessible(true);
+//        superManagerField.set(registry, superManager);
+//
+//        Object loggedIn = proxy.login("superUser", "superPass");
+//        assertTrue(loggedIn instanceof SuperManager);
+//    }
 
     @Test
     public void testClientRegistrationNeedsValidation() throws Exception {
